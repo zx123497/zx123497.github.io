@@ -94,9 +94,9 @@ const Home = () => {
           style={{
             display: "flex",
             flexDirection: "column",
-            margin: "auto",
             color: "#333",
             flex: 1,
+            padding: "3rem",
             justifyContent: "center",
             alignItems: "flex-start",
           }}
@@ -104,10 +104,11 @@ const Home = () => {
           <div
             style={{
               minWidth: "max-content",
-              padding: "2rem",
 
-              width: "100%",
+              alignItems: "stretch",
+              flex: 1,
               display: "flex",
+              width: "100%",
               flexDirection: "column",
             }}
           >
