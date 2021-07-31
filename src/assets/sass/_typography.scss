@@ -1,0 +1,199 @@
+$base-font-size: 1rem !default;
+$base-line-height: 1.5 !default;
+$heading-line-height: 1.2 !default;
+$base-spacing: 1rem !default;
+$primary-font: "微軟正黑體", sans-serif !default;
+$large-screen: 1800px;
+$medium-screen: 786px;
+$small-screen: 576px;
+$link-color: #333333;
+$link-hover: #eeeeee;
+
+//Heading scale
+$giga-scale: 4 !default;
+$mega-scale: 3 !default;
+$h1-scale: 2.5 !default;
+$h2-scale: 2 !default;
+$h3-scale: 1.5 !default;
+$h4-scale: 1.25 !default;
+$h5-scale: 1 !default;
+$h6-scale: 0.875 !default;
+
+// Flow Text
+$range: $large-screen - $small-screen !default;
+$intervals: 20 !default;
+$interval-size: $range / $intervals !default;
+
+html {
+  font-family: $primary-font;
+  font-weight: normal;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media only screen and (min-width: 0) {
+    font-size: $base-font-size * 0.9375;
+  }
+
+  @media only screen and (min-width: $medium-screen) {
+    font-size: $base-font-size;
+  }
+
+  @media only screen and (min-width: $large-screen) {
+    font-size: $base-font-size * 1.1;
+  }
+}
+
+fieldset,
+p,
+table,
+pre,
+hr {
+  margin-bottom: $base-font-size;
+  margin-top: 0;
+}
+
+.giga,
+.mega,
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+  font-weight: 700;
+  line-height: $heading-line-height;
+
+  small, .small {
+    font-size: 65%;
+    color: color("black", "secondary");
+  }
+
+  & + hr {
+    margin-top: -$base-spacing / 4;
+  }
+}
+
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  line-height: $heading-line-height;
+
+  small, .small {
+    font-size: 75%;
+    color: color("black", "secondary");
+  }
+
+  & + hr {
+    margin-top: -$base-spacing / 4;
+  }
+}
+
+$gigas: $base-font-size * $giga-scale;
+$megas: $base-font-size * $mega-scale;
+$h1s: $base-font-size * $h1-scale;
+$h2s: $base-font-size * $h2-scale;
+$h3s: $base-font-size * $h3-scale;
+$h4s: $base-font-size * $h4-scale;
+$h5s: $base-font-size * $h5-scale;
+$h6s: $base-font-size * $h6-scale;
+
+.giga {
+  font-size: $gigas;
+}
+
+.mega {
+  font-size: $megas;
+}
+
+h1, .h1 {
+  font-size: $h1s;
+  margin: 0 0 ($h1s / 2.5) 0;
+}
+
+h2, .h2 {
+  font-size: $h2s;
+  margin: 0 0 ($h2s / 2.5) 0;
+}
+
+h3, .h3 {
+  font-size: $h3s;
+  margin: 0 0 ($h3s / 2.5) 0;
+}
+
+h4, .h4 {
+  font-size: $h4s;
+  margin: 0 0 ($h4s / 2.5) 0;
+  font-weight: 600;
+}
+
+h5, .h5 {
+  font-size: $h5s;
+  margin: 0 0 ($h5s / 2.5) 0;
+  font-weight: 600;
+}
+
+h6, .h6 {
+  font-size: $h6s;
+  margin: 0 0 ($h6s / 2.5) 0;
+  font-weight: 600;
+}
+
+// margin: ($h1-fontsize / 2) 0 ($h1-fontsize / 2.5) 0
+
+.sideNote {
+  font-size: $h6s;
+}
+
+em, .em {
+  font-style: italic;
+}
+
+strong, .strong {
+  font-weight: 600;
+}
+
+small, .small {
+  font-size: 50%;
+}
+
+.light {
+  font-weight: 300;
+}
+
+.thin {
+  font-weight: 200;
+}
+
+a {
+  color: orangered;
+  text-decoration: none;
+  outline: none;
+  border: none;
+
+  &:active, &:hover, &:focus {
+    outline: none;
+    border: none;
+  }
+}
+
+hr {
+  border-bottom: 1px solid color("black", "disabled");
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  margin: $base-spacing 0;
+}
+
+blockquote {
+  border-left: 4px solid color("primary", "base");
+  color: color("black", "secondary");
+  font-style: italic;
+
+  $bq-space: $base-font-size * $base-line-height;
+
+  margin: $bq-space 0 $bq-space 0;
+  padding-left: $base-font-size;
+}
+
+// Credit to materialize css
+// https://github.com/Dogfalo/materialize/blob/master/sass/components/_typography.scss
+// Auto resizes text to be more readable
