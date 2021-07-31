@@ -66,8 +66,10 @@ const Home = () => {
             color: "#FFF",
           }}
         >
-          <h2>Bubble Dragon's 小天地</h2>
-          <h4>Record my Life and Journey</h4>
+          <div style={{ minWidth: "20%" }}>
+            <h2>Bubble Dragon's 小天地</h2>
+            <h4 style={{ color: "#ccc" }}>Record my Life and Journey</h4>
+          </div>
         </div>
         <img src={Img} style={{ width: "auto", height: "100vh" }} />
       </div>
@@ -89,8 +91,10 @@ const Home = () => {
             color: "#333",
           }}
         >
-          <h2>My Hobby</h2>
-          <h4 style={{}}>{hobby}</h4>
+          <div style={{ minWidth: "20%" }}>
+            <h2>My Hobby</h2>
+            <h4 style={{ color: "#777" }}>{hobby}</h4>
+          </div>
         </div>
       </div>
     </div>
