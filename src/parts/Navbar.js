@@ -31,14 +31,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ButtonAppBar() {
+export default function ButtonAppBar(props) {
   const classes = useStyles();
 
   return (
     <AppBar position="fixed" className={classes.Navbar}>
       <Grid display="inline" container justify="center" alignItems="center">
         <h3 style={{ color: "white" }}>Bubble Dragon's 個人網站</h3>
-        <IconButton>
+        <IconButton onClick={props.func}>
           <MenuIcon style={{ color: "#FFF" }} />
         </IconButton>
       </Grid>
