@@ -3,6 +3,7 @@ import Box from "@material-ui/core/Box";
 import { makeStyles } from "@material-ui/core/styles";
 import theme from "./../themes/theme";
 import Img from "../assets/img.JPG";
+import Donut from "../assets/donut.jpg";
 const useStyles = makeStyles({
   root: {
     width: "100%",
@@ -35,6 +36,17 @@ const useStyles = makeStyles({
 });
 
 const Home = () => {
+  const [hobby, setHobby] = useState("Procreate");
+  useEffect(() => {
+    setTimeout(() => {
+      if (hobby === "Procreate") {
+        setHobby("Guitar");
+      } else if (hobby === "Guitar") setHobby("Coding");
+      else {
+        setHobby("Procreate");
+      }
+    }, 3000);
+  }, [hobby]);
   const classes = useStyles();
   return (
     <div className={classes.root}>
@@ -60,6 +72,7 @@ const Home = () => {
         <img src={Img} style={{ width: "auto", height: "100vh" }} />
       </div>
       <div
+        id="2"
         style={{
           backgroundColor: "#eeeeee",
           display: "flex",
@@ -67,7 +80,7 @@ const Home = () => {
           alignItems: "center",
         }}
       >
-        <img src={Img} style={{ width: "auto", height: "100vh" }} />
+        <img src={Donut} style={{ width: "auto", height: "100vh" }} />
         <div
           style={{
             display: "flex",
@@ -77,7 +90,7 @@ const Home = () => {
           }}
         >
           <h2>My Hobby</h2>
-          <h4>Procreate, guitar, and coding!</h4>
+          <h4 style={{}}>{hobby}</h4>
         </div>
       </div>
     </div>
