@@ -2,7 +2,7 @@
   "name": "bio",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://192.168.2.20:8000",
+
   "homepage": "https://zx123497.github.io/",
   "dependencies": {
     "@material-ui/core": "^4.11.4",
