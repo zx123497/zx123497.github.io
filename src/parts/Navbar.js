@@ -37,7 +37,9 @@ export default function ButtonAppBar(props) {
   return (
     <AppBar position="fixed" className={classes.Navbar}>
       <Grid display="inline" container justify="center" alignItems="center">
-        <h3 style={{ color: "white" }}>Bubble Dragon's 個人網站</h3>
+        <h3 onClick={() => props.history.push("/")} style={{ color: "white" }}>
+          Bubble Dragon's 個人網站
+        </h3>
         <IconButton onClick={props.func}>
           <MenuIcon style={{ color: "#FFF" }} />
         </IconButton>

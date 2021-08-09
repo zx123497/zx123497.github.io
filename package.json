@@ -2,6 +2,7 @@
   "name": "bio",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://192.168.2.20:8000",
   "homepage": "https://zx123497.github.io/",
   "dependencies": {
     "@material-ui/core": "^4.11.4",
@@ -9,13 +10,17 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "fireworks": "^2.2.7",
     "gh-pages": "^3.2.3",
     "noty": "^3.2.0-beta-deprecated",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-p5": "^1.3.19",
     "react-router-dom": "^5.2.0",
+    "react-script-tag": "^1.1.2",
     "react-scripts": "4.0.3",
     "sass": "^1.37.0",
+    "socket.io-client": "^4.1.3",
     "web-vitals": "^1.0.1"
   },
   "scripts": {

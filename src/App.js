@@ -10,6 +10,8 @@ import Header from "./parts/Navbar";
 import Drawer from "@material-ui/core/Drawer";
 import Button from "@material-ui/core/Button";
 import Home from "./pages/Home";
+import Hanabi from "./pages/Hanabi";
+import Entry from "./pages/Entry";
 import BubbleChartIcon from "@material-ui/icons/BubbleChart";
 import FolderSpecialIcon from "@material-ui/icons/FolderSpecial";
 import FaceIcon from "@material-ui/icons/Face";
@@ -23,7 +25,7 @@ const useStyles = makeStyles({
   },
 });
 
-const App = () => {
+const App = (props) => {
   const appliedTheme = theme;
   const [drawer, setDrawer] = useState(false);
   const classes = useStyles();
@@ -39,9 +41,10 @@ const App = () => {
           <Switch>
             <Route
               path="/"
-              render={() => (
+              render={(props) => (
                 <>
                   <Header
+                    {...props}
                     func={() => {
                       setDrawer(!drawer);
                     }}
@@ -81,9 +84,12 @@ const App = () => {
                           margin: "1rem 0 0  0",
                         }}
                       >
-                        <Button style={{ color: "#FFF", fontSize: "18px" }}>
+                        <Button
+                          style={{ color: "#FFF", fontSize: "18px" }}
+                          onClick={() => props.history.push("/hanabi")}
+                        >
                           <BubbleChartIcon style={{ marginRight: "1rem" }} />
-                          Procreate作品集
+                          花火大會
                         </Button>
                       </div>
                       <div
@@ -112,6 +118,8 @@ const App = () => {
                   <main>
                     <Switch>
                       <Route path="/" exact component={Home} />
+                      <Route path="/hanabi" exact component={Entry} />
+                      <Route path="/hanabi/:id" exact component={Hanabi} />
                     </Switch>
                   </main>
                 </>

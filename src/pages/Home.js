@@ -4,6 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import theme from "./../themes/theme";
 import Img from "../assets/img.JPG";
 import Donut from "../assets/donut.jpg";
+
 const useStyles = makeStyles({
   root: {
     width: "100%",
@@ -27,12 +28,14 @@ const Home = () => {
     }, 3000);
   }, [hobby]);
   const classes = useStyles();
+  var a = 20 + "as";
   return (
     <div className={classes.root}>
       <div
         style={{
           backgroundColor: "#333333",
           display: "flex",
+          flex: 1,
           justifyContent: "space-between",
           alignItems: "center",
         }}
@@ -42,6 +45,7 @@ const Home = () => {
             display: "flex",
             flexDirection: "column",
             margin: "auto",
+
             color: "#FFF",
           }}
         >
@@ -75,6 +79,7 @@ const Home = () => {
           backgroundColor: "#eeeeee",
           display: "flex",
           width: "100%",
+          flex: 1,
           justifyContent: "center",
           alignItems: "center",
         }}
@@ -123,6 +128,52 @@ const Home = () => {
             <h4 style={{ color: "#777" }}>{hobby}</h4>
           </div>
         </div>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          height: "10rem",
+          boxShadow: "0px -6px 10px rgba(0,0,0,0.3)",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            flex: 0.2,
+            backgroundColor: "#eee",
+            position: "relative",
+            padding: "2rem",
+            alignItems: "center",
+            justifyContent: "center",
+            flexDirection: "column",
+          }}
+        >
+          <h3>我的聯絡資訊{a}</h3>
+          <h4 style={{ color: "#666" }}> Information</h4>
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              right: 0,
+              width: "0",
+              height: "0",
+              // backgroundColor: "#333",
+              borderWidth: "5rem 3rem",
+              borderColor: "transparent #333 transparent  transparent",
+              borderStyle: "solid",
+              filter: " drop-shadow(-8px 0px 6px rgba(0, 0, 0, 0.3))",
+            }}
+          ></div>
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            flex: 1,
+            backgroundColor: "#333",
+            padding: "2rem",
+          }}
+        ></div>
       </div>
     </div>
   );
