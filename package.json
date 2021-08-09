@@ -2,7 +2,7 @@
   "name": "bio",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://damp-tor-27437.herokuapp.com/",
+  
   "homepage": "https://zx123497.github.io/",
   "dependencies": {
     "@material-ui/core": "^4.11.4",
