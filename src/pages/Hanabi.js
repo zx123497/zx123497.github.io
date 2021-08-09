@@ -242,6 +242,11 @@ const Home = (props) => {
             onChange={(evt) => {
               setText(evt.target.value);
             }}
+            onKeyPress={(evt) => {
+              if (evt.key === "Enter") {
+                sendData();
+              }
+            }}
           />
           <Button
             onClick={sendData}
