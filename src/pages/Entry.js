@@ -14,7 +14,6 @@ const useStyles = makeStyles({
     backgroundColor: "#0E073C",
   },
 });
-const socket = io.connect("http://192.168.2.20:8000");
 
 const Home = (props) => {
   const [text, setText] = useState("");
