@@ -1,32 +1,104 @@
 import React from "react";
-import { makeStyles } from '@material-ui/core';
-import CircularProgress from '@material-ui/core/CircularProgress';
-
-const useStyles = makeStyles(theme => ({
-    Loader: {
-        width: '100%',
-        minWidth: '300px',
-        padding: 15,
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        "& .text": {
-            textAlign: 'center',
-            color: theme.palette.text.secondary,
-            marginLeft: 10
-        }
-    }
-}));
+import { makeStyles } from "@material-ui/core";
 
 const Loader = (props) => {
-    const classes = useStyles();
+  const classes = useStyles();
 
-    return (
-        <div className={classes.Loader}>
-            <CircularProgress size="1rem" />
-            <div className="text">載入中</div>
-        </div>
-    );
-}
+  return (
+    <div className={`${classes.Loader} loader ${props.className}`}>
+      <div title="5">
+        <svg
+          version="1.1"
+          id="Layer_1"
+          xmlns="http://www.w3.org/2000/svg"
+          xlink="http://www.w3.org/1999/xlink"
+          x="0px"
+          y="0px"
+          width="24px"
+          height="30px"
+          viewBox="0 0 24 30"
+          style={{ enableBackground: "new 0 0 50 50" }}
+          space="preserve"
+        >
+          <rect x="0" y="13" width="4" height="5" fill="#333">
+            <animate
+              attributeName="height"
+              attributeType="XML"
+              values="5;21;5"
+              begin="0s"
+              dur="0.6s"
+              repeatCount="indefinite"
+            />
+            <animate
+              attributeName="y"
+              attributeType="XML"
+              values="13; 5; 13"
+              begin="0s"
+              dur="0.6s"
+              repeatCount="indefinite"
+            />
+          </rect>
+          <rect x="10" y="13" width="4" height="5" fill="#333">
+            <animate
+              attributeName="height"
+              attributeType="XML"
+              values="5;21;5"
+              begin="0.15s"
+              dur="0.6s"
+              repeatCount="indefinite"
+            />
+            <animate
+              attributeName="y"
+              attributeType="XML"
+              values="13; 5; 13"
+              begin="0.15s"
+              dur="0.6s"
+              repeatCount="indefinite"
+            />
+          </rect>
+          <rect x="20" y="13" width="4" height="5" fill="#333">
+            <animate
+              attributeName="height"
+              attributeType="XML"
+              values="5;21;5"
+              begin="0.3s"
+              dur="0.6s"
+              repeatCount="indefinite"
+            />
+            <animate
+              attributeName="y"
+              attributeType="XML"
+              values="13; 5; 13"
+              begin="0.3s"
+              dur="0.6s"
+              repeatCount="indefinite"
+            />
+          </rect>
+        </svg>
+      </div>
+      <div className="text">載入中</div>
+    </div>
+  );
+};
 
 export default Loader;
+
+const useStyles = makeStyles(() => ({
+  Loader: {
+    width: "100%",
+    minWidth: "300px",
+    padding: 15,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    "& svg rect": {
+      fill: "aqua",
+    },
+    "& .text": {
+      textAlign: "center",
+      fontWeight: 900,
+      color: "#555",
+      marginLeft: 10,
+    },
+  },
+}));

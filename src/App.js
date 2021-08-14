@@ -2,20 +2,36 @@ import "./assets/sass/_normalize.scss";
 import "./assets/sass/_typography.scss";
 import "../node_modules/noty/lib/noty.css";
 import { makeStyles } from "@material-ui/core/styles";
-import { React, useState } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { React, useState, Suspense, lazy } from "react";
+import {
+  BrowserRouter,
+  NavLink,
+  Route,
+  Switch,
+  useLocation,
+} from "react-router-dom";
 import { ThemeProvider } from "@material-ui/core/styles";
 import theme from "./themes/theme";
 import Header from "./parts/Navbar";
 import Drawer from "@material-ui/core/Drawer";
 import Button from "@material-ui/core/Button";
-import Home from "./pages/Home";
-import Hanabi from "./pages/Hanabi";
-import Entry from "./pages/Entry";
+// import Home from "./pages/Home";
+// import Hanabi from "./pages/Hanabi";
+// import Entry from "./pages/Entry";
 import BubbleChartIcon from "@material-ui/icons/BubbleChart";
 import FolderSpecialIcon from "@material-ui/icons/FolderSpecial";
 import FaceIcon from "@material-ui/icons/Face";
+import { AnimatePresence, motion } from "framer-motion";
+import Loader from "./components/Loader/Loader";
 const useStyles = makeStyles({
+  "@keyframes fadeIn": {
+    from: {
+      opacity: 0,
+    },
+    to: {
+      opacity: 1,
+    },
+  },
   paper: {
     "& .MuiPaper-root": {
       backgroundColor: "rgba(0,0,0,.4)",
@@ -23,10 +39,22 @@ const useStyles = makeStyles({
       color: "#ccc",
     },
   },
+  App: {
+    "& .suspense_loader": {
+      opacity: 0,
+      animationFillMode: "forwards",
+      animation: "$fadeIn 1s",
+      animationDelay: "0.75s",
+    },
+  },
 });
 
+const Home = lazy(() => import("./pages/Home"));
+const Entry = lazy(() => import("./pages/Entry"));
+const Hanabi = lazy(() => import("./pages/Hanabi"));
 const App = (props) => {
   const appliedTheme = theme;
+
   const [drawer, setDrawer] = useState(false);
   const classes = useStyles();
   const styles = {
@@ -34,101 +62,126 @@ const App = (props) => {
       backgroundColor: "blue",
     },
   };
+  const location = useLocation();
   return (
-    <BrowserRouter>
-      <ThemeProvider theme={appliedTheme}>
-        <div className={classes.App}>
-          <Switch>
-            <Route
-              path="/"
-              render={(props) => (
-                <>
-                  <Header
-                    {...props}
-                    func={() => {
-                      setDrawer(!drawer);
-                    }}
-                  />
+    <ThemeProvider theme={appliedTheme}>
+      <div className={`${classes.App} App`}>
+        <Switch>
+          <Route
+            path="/"
+            render={(props) => (
+              <>
+                <Header
+                  {...props}
+                  func={() => {
+                    setDrawer(!drawer);
+                  }}
+                />
 
-                  <Drawer
-                    className={classes.paper}
-                    anchor="right"
-                    open={drawer}
-                    onClose={() => setDrawer(false)}
+                <Drawer
+                  className={classes.paper}
+                  anchor="right"
+                  open={drawer}
+                  onClose={() => setDrawer(false)}
+                >
+                  <div
+                    style={{
+                      width: "250px",
+                      display: "flex",
+                      padding: "2rem",
+                      justifyContent: "space-around",
+                    }}
+                  >
+                    <h3>M</h3>
+                    <h3>E</h3>
+                    <h3>N</h3>
+                    <h3>U</h3>
+                  </div>
+                  <div
+                    style={{
+                      width: "250px",
+                      display: "flex",
+                      padding: "2rem",
+                      alignItems: "flex-start",
+                      justifyContent: "flex-start",
+                      flexDirection: "column",
+                    }}
                   >
                     <div
                       style={{
-                        width: "250px",
-                        display: "flex",
-                        padding: "2rem",
-                        justifyContent: "space-around",
+                        margin: "1rem 0 0  0",
                       }}
                     >
-                      <h3>M</h3>
-                      <h3>E</h3>
-                      <h3>N</h3>
-                      <h3>U</h3>
+                      <NavLink
+                        style={{ color: "#FFF", fontSize: "18px" }}
+                        to="/hanabi"
+                      >
+                        <BubbleChartIcon style={{ marginRight: "1rem" }} />
+                        花火大會
+                      </NavLink>
                     </div>
                     <div
                       style={{
-                        width: "250px",
-                        display: "flex",
-                        padding: "2rem",
-                        alignItems: "flex-start",
-                        justifyContent: "flex-start",
-                        flexDirection: "column",
+                        margin: "1rem 0 0 0 ",
                       }}
                     >
-                      <div
-                        style={{
-                          margin: "1rem 0 0  0",
-                        }}
-                      >
-                        <Button
-                          style={{ color: "#FFF", fontSize: "18px" }}
-                          onClick={() => props.history.push("/hanabi")}
-                        >
-                          <BubbleChartIcon style={{ marginRight: "1rem" }} />
-                          花火大會
-                        </Button>
-                      </div>
-                      <div
-                        style={{
-                          margin: "1rem 0 0 0 ",
-                        }}
-                      >
-                        <Button style={{ color: "#FFF", fontSize: "18px" }}>
-                          <FolderSpecialIcon style={{ marginRight: "1rem" }} />
-                          網頁作品專案
-                        </Button>
-                      </div>
-                      <div
-                        style={{
-                          margin: "1rem 0 0 0",
-                        }}
-                      >
-                        <Button style={{ color: "#FFF", fontSize: "18px" }}>
-                          <FaceIcon style={{ marginRight: "1rem" }} />
-                          關於我
-                        </Button>
-                      </div>
+                      <Button style={{ color: "#FFF", fontSize: "18px" }}>
+                        <FolderSpecialIcon style={{ marginRight: "1rem" }} />
+                        網頁作品專案
+                      </Button>
                     </div>
-                  </Drawer>
+                    <div
+                      style={{
+                        margin: "1rem 0 0 0",
+                      }}
+                    >
+                      <Button style={{ color: "#FFF", fontSize: "18px" }}>
+                        <FaceIcon style={{ marginRight: "1rem" }} />
+                        關於我
+                      </Button>
+                    </div>
+                  </div>
+                </Drawer>
 
-                  <main>
-                    <Switch>
-                      <Route path="/" exact component={Home} />
-                      <Route path="/hanabi" exact component={Entry} />
-                      <Route path="/hanabi/:id" exact component={Hanabi} />
-                    </Switch>
-                  </main>
-                </>
-              )}
-            />
-          </Switch>
-        </div>
-      </ThemeProvider>
-    </BrowserRouter>
+                <main
+                  style={{
+                    backgroundColor: "#333",
+                  }}
+                >
+                  <Suspense
+                    fallback={
+                      <div
+                        style={{
+                          width: "100%",
+                          height: "100vh",
+                          backgroundColor: "#333",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                        }}
+                      >
+                        <Loader className="suspense-loader" />
+                      </div>
+                    }
+                  >
+                    <AnimatePresence exitBeforeEnter>
+                      <Switch
+                        location={location}
+                        key={location.pathname.split("/")[1]}
+                      >
+                        <Route path="/" exact component={Home} />
+                        <Route path="/hanabi" exact component={Entry} />
+                        <Route path="/hanabi/:id" exact component={Hanabi} />
+                      </Switch>
+                    </AnimatePresence>
+                  </Suspense>
+                </main>
+              </>
+            )}
+          />
+        </Switch>
+      </div>
+    </ThemeProvider>
   );
 };
 

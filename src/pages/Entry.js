@@ -4,8 +4,11 @@ import Button from "@material-ui/core/Button";
 import { io } from "socket.io-client";
 import FilterVintageIcon from "@material-ui/icons/FilterVintage";
 import Input from "@material-ui/core/Input";
+import { motion } from "framer-motion";
+import { NavLink } from "react-router-dom";
 const useStyles = makeStyles({
   root: {
+    width: "100%",
     height: "100vh",
     justifyContent: "center",
     alignItems: "center",
@@ -25,82 +28,89 @@ const Home = (props) => {
   };
 
   return (
-    <div className={classes.root}>
-      <div
-        style={{
-          backgroundColor: "rgba(255,255,255,.2)",
-          padding: "20px",
-          justifyContent: "center",
-          alignItems: "center",
-          display: "flex",
-          flexDirection: "column",
-          borderRadius: "10px",
-        }}
-      >
+    <motion.div
+      initial={{ opacity: 0, y: -100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+      exit={{ opacity: 0, y: -100 }}
+    >
+      <div className={classes.root}>
         <div
           style={{
-            width: "100%",
-            display: "flex",
-            alignItems: "center",
+            backgroundColor: "rgba(255,255,255,.2)",
+            padding: "20px",
             justifyContent: "center",
-          }}
-        >
-          <FilterVintageIcon style={{ margin: "0 1rem", color: "#FFF" }} />
-          <h1 style={{ color: "red", margin: "0" }}>花</h1>
-          <h1 style={{ color: "yellow", margin: "0" }}>火</h1>
-          <h1 style={{ color: "pink", margin: "0" }}>大</h1>
-          <h1 style={{ color: "aqua", margin: "0" }}>会</h1>
-          <FilterVintageIcon style={{ margin: "0 1rem", color: "#FFF" }} />
-        </div>
-
-        <div
-          style={{
-            width: "100%",
+            alignItems: "center",
             display: "flex",
             flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
+            borderRadius: "10px",
           }}
         >
           <div
             style={{
-              color: "#FFF",
-              borderColor: "#FFF",
-              margin: "30px",
+              width: "100%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
-            <Input
-              style={{
-                color: "#FFF",
-
-                "&.MuiInput-underline:before": {
-                  borderBottom: "1px solid #FFF",
-                },
-              }}
-              value={text}
-              placeholder="輸入暱稱"
-              inputProps={{ "aria-label": "description" }}
-              onChange={(evt) => {
-                setText(evt.target.value);
-              }}
-            />
+            <FilterVintageIcon style={{ margin: "0 1rem", color: "#FFF" }} />
+            <h1 style={{ color: "red", margin: "0" }}>花</h1>
+            <h1 style={{ color: "yellow", margin: "0" }}>火</h1>
+            <h1 style={{ color: "pink", margin: "0" }}>大</h1>
+            <h1 style={{ color: "aqua", margin: "0" }}>会</h1>
+            <FilterVintageIcon style={{ margin: "0 1rem", color: "#FFF" }} />
           </div>
 
-          <Button
-            onClick={sendData}
+          <div
             style={{
               width: "100%",
-
-              color: "#FFF",
-              border: "2px rgba(255,255,255,.2) solid",
-              marginTop: "20px",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
-            加入
-          </Button>
+            <div
+              style={{
+                color: "#FFF",
+                borderColor: "#FFF",
+                margin: "30px",
+              }}
+            >
+              <Input
+                style={{
+                  color: "#FFF",
+
+                  "&.MuiInput-underline:before": {
+                    borderBottom: "1px solid #FFF",
+                  },
+                }}
+                value={text}
+                placeholder="輸入暱稱"
+                inputProps={{ "aria-label": "description" }}
+                onChange={(evt) => {
+                  setText(evt.target.value);
+                }}
+              />
+            </div>
+
+            <NavLink
+              to={`/hanabi/${text}`}
+              style={{
+                width: "100%",
+
+                color: "#FFF",
+                border: "2px rgba(255,255,255,.2) solid",
+                marginTop: "20px",
+              }}
+            >
+              加入
+            </NavLink>
+          </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -9,8 +9,10 @@ import { io } from "socket.io-client";
 import FilterVintageIcon from "@material-ui/icons/FilterVintage";
 import Input from "@material-ui/core/Input";
 import fx from "fireworks";
+import { motion } from "framer-motion";
 const useStyles = makeStyles({
   root: {
+    width: "100%",
     height: "100vh",
     justifyContent: "center",
     alignItems: "center",
@@ -106,163 +108,173 @@ const Home = (props) => {
   };
 
   return (
-    <div className={classes.root}>
-      <div
-        onClick={() => {
-          console.log("fire");
-          firework(cordinate);
-        }}
-        onMouseMove={(evt) => {
-          setCordinate({
-            x: evt.pageX,
-            y: evt.pageY,
-          });
-        }}
-        style={{
-          width: "100%",
-          flex: 1,
-          overflow: "hidden",
-          color: "#FFF",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <img
-          src={Title}
+    <motion.div
+      initial={{ opacity: 0, y: -100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+      exit={{ opacity: 0, y: -100 }}
+    >
+      <div className={classes.root}>
+        <div
+          onClick={() => {
+            console.log("fire");
+            firework(cordinate);
+          }}
+          onMouseMove={(evt) => {
+            setCordinate({
+              x: evt.pageX,
+              y: evt.pageY,
+            });
+          }}
           style={{
+            width: "100%",
+            flex: 1,
+            overflow: "hidden",
+            color: "#FFF",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <img
+            src={Title}
+            style={{
+              filter: "drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.3))",
+            }}
+          />
+        </div>
+        <img
+          src={Hana}
+          style={{
+            position: "fixed",
+            bottom: 0,
+            right: "20%",
+            width: "15%",
             filter: "drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.3))",
           }}
         />
-      </div>
-      <img
-        src={Hana}
-        style={{
-          position: "fixed",
-          bottom: 0,
-          right: "20%",
-          width: "15%",
-          filter: "drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.3))",
-        }}
-      />
-      <img
-        src={Hana}
-        style={{
-          position: "fixed",
-          bottom: 0,
-          width: "20%",
-          right: "45%",
-          filter: "drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.3))",
-        }}
-      />
-      <img
-        src={Hana}
-        style={{
-          position: "fixed",
-          bottom: 0,
-          width: "22%",
-          right: "30%",
-          filter: "drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.3))",
-        }}
-      />
-      <img
-        src={Mise}
-        style={{
-          position: "fixed",
-          bottom: -15,
-          width: "22%",
-          left: 0,
-          filter: "drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.3))",
-        }}
-      />
-      <img
-        src={Family}
-        style={{
-          position: "fixed",
-          bottom: -60,
-          width: "30%",
-          right: "50%",
-          filter: "drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.3))",
-        }}
-      />
-
-      <div
-        className={classes.chat}
-        style={{
-          position: "fixed",
-          bottom: 0,
-          right: 0,
-          padding: "15px",
-          color: "#FFF",
-          backgroundColor: "rgba(0,0,0,0.4)",
-
-          borderRadius: "15px",
-        }}
-      >
-        <div
+        <img
+          src={Hana}
           style={{
-            width: "100%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
+            position: "fixed",
+            bottom: 0,
+            width: "20%",
+            right: "45%",
+            filter: "drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.3))",
+          }}
+        />
+        <img
+          src={Hana}
+          style={{
+            position: "fixed",
+            bottom: 0,
+            width: "22%",
+            right: "30%",
+            filter: "drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.3))",
+          }}
+        />
+        <img
+          src={Mise}
+          style={{
+            position: "fixed",
+            bottom: -15,
+            width: "22%",
+            left: 0,
+            filter: "drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.3))",
+          }}
+        />
+        <img
+          src={Family}
+          style={{
+            position: "fixed",
+            bottom: -60,
+            width: "30%",
+            right: "50%",
+            filter: "drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.3))",
+          }}
+        />
+
+        <div
+          className={classes.chat}
+          style={{
+            position: "fixed",
+            bottom: 0,
+            right: 0,
+            padding: "15px",
+            color: "#FFF",
+            backgroundColor: "rgba(0,0,0,0.4)",
+
+            borderRadius: "15px",
           }}
         >
-          <FilterVintageIcon style={{ margin: "0 1rem" }} />
-          <h1 style={{ color: "red", margin: "0" }}>花</h1>
-          <h1 style={{ color: "yellow", margin: "0" }}>火</h1>
-          <h1 style={{ color: "pink", margin: "0" }}>大</h1>
-          <h1 style={{ color: "aqua", margin: "0" }}>会</h1>
-          <FilterVintageIcon style={{ margin: "0 1rem" }} />
-        </div>
-        <hr
-          style={{ borderColor: "rgba(255,255,255,0.3)", lineHeight: "0.3rem" }}
-        />
-        <div style={{ height: "15rem", overflow: "auto", width: "30rem" }}>
-          {messages.map((row) => (
-            <div
-              style={
-                row.text === `${row.username} 也加入花火大會了，打聲招呼吧~`
-                  ? { color: "orange" }
-                  : row.text === `${row.username} 離開花火大會 ~`
-                  ? { color: "rgba(255,255,255,0.3)" }
-                  : {}
-              }
-            >
-              {row.username} : {row.text}
-            </div>
-          ))}
-          <div ref={messagesEndRef} />
-        </div>
-        <div style={{ width: "100%", display: "flex" }}>
-          <Input
-            style={{ color: "#FFF", flex: 1 }}
-            value={text}
-            placeholder="輸入訊息"
-            inputProps={{ "aria-label": "description" }}
-            onChange={(evt) => {
-              setText(evt.target.value);
-            }}
-            onKeyPress={(evt) => {
-              if (evt.key === "Enter") {
-                sendData();
-              }
-            }}
-          />
-          <Button
-            onClick={sendData}
+          <div
             style={{
-              width: "100px",
-              marginLeft: "20px",
-              color: "#FFF",
-              border: "2px rgba(255,255,255,.2) solid",
-              marginTop: "20px",
+              width: "100%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
-            傳送
-          </Button>
+            <FilterVintageIcon style={{ margin: "0 1rem" }} />
+            <h1 style={{ color: "red", margin: "0" }}>花</h1>
+            <h1 style={{ color: "yellow", margin: "0" }}>火</h1>
+            <h1 style={{ color: "pink", margin: "0" }}>大</h1>
+            <h1 style={{ color: "aqua", margin: "0" }}>会</h1>
+            <FilterVintageIcon style={{ margin: "0 1rem" }} />
+          </div>
+          <hr
+            style={{
+              borderColor: "rgba(255,255,255,0.3)",
+              lineHeight: "0.3rem",
+            }}
+          />
+          <div style={{ height: "15rem", overflow: "auto", width: "30rem" }}>
+            {messages.map((row) => (
+              <div
+                style={
+                  row.text === `${row.username} 也加入花火大會了，打聲招呼吧~`
+                    ? { color: "orange" }
+                    : row.text === `${row.username} 離開花火大會 ~`
+                    ? { color: "rgba(255,255,255,0.3)" }
+                    : {}
+                }
+              >
+                {row.username} : {row.text}
+              </div>
+            ))}
+            <div ref={messagesEndRef} />
+          </div>
+          <div style={{ width: "100%", display: "flex" }}>
+            <Input
+              style={{ color: "#FFF", flex: 1 }}
+              value={text}
+              placeholder="輸入訊息"
+              inputProps={{ "aria-label": "description" }}
+              onChange={(evt) => {
+                setText(evt.target.value);
+              }}
+              onKeyPress={(evt) => {
+                if (evt.key === "Enter") {
+                  sendData();
+                }
+              }}
+            />
+            <Button
+              onClick={sendData}
+              style={{
+                width: "100px",
+                marginLeft: "20px",
+                color: "#FFF",
+                border: "2px rgba(255,255,255,.2) solid",
+                marginTop: "20px",
+              }}
+            >
+              傳送
+            </Button>
+          </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
