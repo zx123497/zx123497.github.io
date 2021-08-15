@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
-import { io } from "socket.io-client";
+import Hana from "../assets/hana.png";
+import Family from "../assets/family.png";
+import Mise from "../assets/mise.png";
 import FilterVintageIcon from "@material-ui/icons/FilterVintage";
 import Input from "@material-ui/core/Input";
 import { motion } from "framer-motion";
@@ -42,10 +43,61 @@ const Home = (props) => {
             justifyContent: "center",
             alignItems: "center",
             display: "flex",
+            position: "relative",
             flexDirection: "column",
             borderRadius: "10px",
           }}
         >
+          <img
+            src={Hana}
+            style={{
+              position: "fixed",
+              bottom: 0,
+              right: "20%",
+              width: "15%",
+              filter: "drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.3))",
+            }}
+          />
+          <img
+            src={Hana}
+            style={{
+              position: "fixed",
+              bottom: 0,
+              width: "20%",
+              right: "45%",
+              filter: "drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.3))",
+            }}
+          />
+          <img
+            src={Hana}
+            style={{
+              position: "fixed",
+              bottom: 0,
+              width: "22%",
+              right: "30%",
+              filter: "drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.3))",
+            }}
+          />
+          <img
+            src={Mise}
+            style={{
+              position: "fixed",
+              bottom: -15,
+              width: "22%",
+              left: 0,
+              filter: "drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.3))",
+            }}
+          />
+          <img
+            src={Family}
+            style={{
+              position: "fixed",
+              bottom: -60,
+              width: "30%",
+              right: "50%",
+              filter: "drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.3))",
+            }}
+          />
           <div
             style={{
               width: "100%",

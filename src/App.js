@@ -113,8 +113,9 @@ const App = (props) => {
                       }}
                     >
                       <NavLink
+                        onClick={() => setDrawer(false)}
                         style={{ color: "#FFF", fontSize: "18px" }}
-                        to="/hanabi"
+                        to="/entry"
                       >
                         <BubbleChartIcon style={{ marginRight: "1rem" }} />
                         花火大會
@@ -170,7 +171,7 @@ const App = (props) => {
                         key={location.pathname.split("/")[1]}
                       >
                         <Route path="/" exact component={Home} />
-                        <Route path="/hanabi" exact component={Entry} />
+                        <Route path="/entry" exact component={Entry} />
                         <Route path="/hanabi/:id" exact component={Hanabi} />
                       </Switch>
                     </AnimatePresence>

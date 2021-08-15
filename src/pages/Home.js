@@ -1,32 +1,38 @@
-import React, { useState, useEffect } from "react";
-import Box from "@material-ui/core/Box";
+import React, { useState, useEffect, useRef } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import theme from "./../themes/theme";
 import Img from "../assets/img.JPG";
-import Donut from "../assets/donut.jpg";
 import { motion } from "framer-motion";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import Hana from "../assets/hana.png";
+import Family from "../assets/family.png";
+import Mise from "../assets/mise.png";
 const useStyles = makeStyles({
   root: {
     width: "100%",
     display: "flex",
     flexDirection: "column",
     "@media (-width:768px)": {},
+    "& .nextBut": {
+      width: "50px",
+      height: "50px",
+      position: "absolute",
+      backgroundColor: "rgba(255,255,255,0.4)",
+      bottom: 10,
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      borderRadius: "50%",
+      left: "50%",
+    },
   },
 });
 
 const Home = () => {
-  const [hobby, setHobby] = useState("畫畫 Procreate");
-  useEffect(() => {
-    setTimeout(() => {
-      if (hobby === "畫畫 Procreate") {
-        setHobby("彈吉他 Guitar");
-      } else if (hobby === "彈吉他 Guitar") {
-        setHobby("程式設計 programing");
-      } else if (hobby === "程式設計 programing") {
-        setHobby("畫畫 Procreate");
-      }
-    }, 3000);
-  }, [hobby]);
+  const ref = useRef(null);
+  const scrollToNext = () => {
+    ref.current.scrollIntoView({ behavior: "smooth" });
+  };
+  useEffect(() => {}, []);
   const classes = useStyles();
   var a = 20 + "as";
   return (
@@ -45,9 +51,10 @@ const Home = () => {
       <div className={classes.root}>
         <div
           style={{
-            backgroundColor: "#333333",
+            backgroundColor: "#fff",
             display: "flex",
             flex: 1,
+            position: "relative",
             justifyContent: "space-between",
             alignItems: "center",
           }}
@@ -71,21 +78,24 @@ const Home = () => {
               }}
             >
               <motion.h2
-                initial={{ opacity: 0 }}
+                initial={{ opacity: 0, x: -100 }}
                 animate={{
                   opacity: 1,
-                  transition: { duration: 2, ease: "easeInOut" },
+                  x: 0,
+                  transition: { duration: 1, delay: 1, ease: "easeInOut" },
                 }}
+                style={{ color: "#333", fontWeight: "bold" }}
               >
-                Bubble Dragon's 小天地
+                <span style={{ color: "#55C4F0" }}>Bubble Dragon's</span> 小天地
               </motion.h2>
               <motion.h4
-                initial={{ opacity: 0 }}
+                initial={{ opacity: 0, x: 100 }}
                 animate={{
                   opacity: 1,
-                  transition: { duration: 3, ease: "easeInOut" },
+                  x: 0,
+                  transition: { duration: 1, delay: 1.5, ease: "easeInOut" },
                 }}
-                style={{ color: "#ccc" }}
+                style={{ color: "#999" }}
               >
                 Record my Life and Journey
               </motion.h4>
@@ -101,111 +111,156 @@ const Home = () => {
               maxHeight: "100vh",
             }}
           />
+          <motion.div
+            whileHover={{
+              scale: 1.1,
+              rotate: 360,
+              transition: { duration: 0.5, ease: "easeOut" },
+            }}
+            initial={{ y: -50, opacity: 0 }}
+            animate={{
+              y: 0,
+              opacity: 1,
+              transition: { delay: 2, duration: 1 },
+            }}
+            className={`nextBut`}
+            onClick={scrollToNext}
+          >
+            <ExpandMoreIcon style={{ fontSize: "30px", color: "#FFF" }} />
+          </motion.div>
         </div>
         <div
           id="2"
           style={{
-            backgroundColor: "#eeeeee",
+            backgroundColor: "#ddd",
             display: "flex",
-            width: "100%",
-            flex: 1,
+            position: "relative",
             justifyContent: "center",
-            alignItems: "center",
+            width: "100%",
+            height: "100vh",
+            padding: "15rem",
           }}
+          ref={ref}
         >
           <img
-            src={Donut}
+            src={Hana}
             style={{
-              minWidth: "50%",
-              height: "auto",
-              flex: 1,
-              display: "flex",
-
-              maxHeight: "100vh",
+              position: "absolute",
+              bottom: 0,
+              right: "20%",
+              width: "15%",
+              filter: "drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.3))",
             }}
           />
-          <div
+          <img
+            src={Hana}
             style={{
-              display: "flex",
-              flexDirection: "column",
-              color: "#333",
-              flex: 1,
-              padding: "3rem",
-              justifyContent: "center",
-              alignItems: "flex-start",
+              position: "absolute",
+              bottom: 0,
+              width: "20%",
+              right: "45%",
+              filter: "drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.3))",
             }}
-          >
-            <div
-              style={{
-                minWidth: "max-content",
+          />
+          <img
+            src={Hana}
+            style={{
+              position: "absolute",
+              bottom: 0,
+              width: "22%",
+              right: "30%",
+              filter: "drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.3))",
+            }}
+          />
 
-                alignItems: "stretch",
-                flex: 1,
+          <img
+            src={Family}
+            style={{
+              position: "absolute",
+              bottom: -60,
+              width: "30%",
+              right: "50%",
+              filter: "drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.3))",
+            }}
+          />
+          <div>
+            <h2 style={{ marginBottom: "3rem" }}>我的專長</h2>
+            <motion.div
+              style={{
                 display: "flex",
-                width: "100%",
-                flexDirection: "column",
+                justifyContent: "center",
               }}
+              variants={{
+                hidden: { opacity: 0, y: 0 },
+                show: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { staggerChildren: 0.5 },
+                },
+              }}
+              initial="hidden"
+              animate="show"
             >
-              <h2>我的大學 University</h2>
-              <h4 style={{ color: "#777" }}>
-                國立中央大學 National Central University{" "}
-              </h4>
-              <hr
-                style={{
-                  border: "1px rgba(0,0,0,0.1) solid",
-                  margin: "3rem 0",
+              <motion.div
+                variants={{
+                  whileHover: { scale: 1.1 },
+                  hidden: { opacity: 0, scale: 0, y: 300 },
+                  show: {
+                    opacity: 1,
+                    scale: 1,
+                    y: 0,
+                    transition: { duration: 1, ease: "backOut" },
+                  },
                 }}
-              />
-              <h2>我的興趣 My Hobby</h2>
-              <h4 style={{ color: "#777" }}>{hobby}</h4>
-            </div>
+                style={{
+                  width: "25rem",
+                  height: "20rem",
+                  margin: "0 2rem",
+                  borderRadius: "10px",
+                  boxShadow: "3px 3px 6px rgba(0,0,0,0.2)",
+                  backgroundColor: "#FFF",
+                }}
+              ></motion.div>
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, scale: 0, y: 300 },
+                  show: {
+                    opacity: 1,
+                    scale: 1,
+                    y: 0,
+                    transition: { duration: 1, ease: "backOut" },
+                  },
+                }}
+                style={{
+                  width: "25rem",
+                  height: "20rem",
+                  margin: "0 2rem",
+                  borderRadius: "10px",
+                  boxShadow: "3px 3px 6px rgba(0,0,0,0.2)",
+                  backgroundColor: "#FFF",
+                }}
+              ></motion.div>
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, scale: 0, y: 300 },
+                  show: {
+                    opacity: 1,
+                    scale: 1,
+                    y: 0,
+                    transition: { duration: 1, ease: "backOut" },
+                  },
+                }}
+                style={{
+                  width: "25rem",
+                  height: "20rem",
+                  margin: "0 2rem",
+                  borderRadius: "10px",
+                  boxShadow: "3px 3px 6px rgba(0,0,0,0.2)",
+                  backgroundColor: "#FFF",
+                }}
+              ></motion.div>
+            </motion.div>
           </div>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            height: "10rem",
-            boxShadow: "0px -6px 10px rgba(0,0,0,0.3)",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              flex: 0.2,
-              backgroundColor: "#eee",
-              position: "relative",
-              padding: "2rem",
-              alignItems: "center",
-              justifyContent: "center",
-              flexDirection: "column",
-            }}
-          >
-            <h3>我的聯絡資訊{a}</h3>
-            <h4 style={{ color: "#666" }}> Information</h4>
-            <div
-              style={{
-                position: "absolute",
-                top: 0,
-                right: 0,
-                width: "0",
-                height: "0",
-                // backgroundColor: "#333",
-                borderWidth: "5rem 3rem",
-                borderColor: "transparent #333 transparent  transparent",
-                borderStyle: "solid",
-                filter: " drop-shadow(-8px 0px 6px rgba(0, 0, 0, 0.3))",
-              }}
-            ></div>
-          </div>
-
-          <div
-            style={{
-              display: "flex",
-              flex: 1,
-              backgroundColor: "#333",
-              padding: "2rem",
-            }}
-          ></div>
         </div>
       </div>
     </motion.div>

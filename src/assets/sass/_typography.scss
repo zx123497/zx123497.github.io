@@ -162,7 +162,9 @@ small, .small {
 .thin {
   font-weight: 200;
 }
-
+div{
+  box-sizing: border-box;
+}
 a {
   color: orangered;
   text-decoration: none;

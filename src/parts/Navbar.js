@@ -36,12 +36,14 @@ export default function ButtonAppBar(props) {
 
   return (
     <AppBar position="fixed" className={classes.Navbar}>
-      <Grid display="inline" container justify="center" alignItems="center">
-        <NavLink to="/">
-          <h3 style={{ color: "white" }}>Bubble Dragon's 個人網站</h3>
+      <Grid display="inline" container justify="flex-start" alignItems="center">
+        <NavLink style={{ flex: 1, marginLeft: "5rem" }} to="/">
+          <h3 style={{ color: "white", fontFamily: "monospace" }}>
+            Bubble Dragon
+          </h3>
         </NavLink>
 
-        <IconButton onClick={props.func}>
+        <IconButton onClick={props.func} style={{ marginRight: "2rem" }}>
           <MenuIcon style={{ color: "#FFF" }} />
         </IconButton>
       </Grid>
