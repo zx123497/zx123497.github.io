@@ -29,7 +29,7 @@ const Footer = (props) => {
           alignItems: "center",
         }}
       >
-        <img src={Title} style={{ width: "20rem", height: "auto" }} />
+        <img src={Title} style={{ width: "20rem", height: "auto" }} alt="img" />
         <div style={{ display: "flex", marginTop: "2rem" }}>
           <IconButton style={{ backgroundColor: "#FFF", margin: "0 .5rem" }}>
             <GitHubIcon style={{ fontSize: "1.5rem", color: "#750DFC" }} />

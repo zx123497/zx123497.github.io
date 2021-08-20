@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Hana from "../assets/hana.png";
 import Family from "../assets/family.png";
@@ -22,11 +22,6 @@ const useStyles = makeStyles({
 const Home = (props) => {
   const [text, setText] = useState("");
   const classes = useStyles();
-  const sendData = () => {
-    if (text !== "") {
-      props.history.push(`/hanabi/${text}`);
-    }
-  };
 
   return (
     <motion.div
@@ -58,6 +53,7 @@ const Home = (props) => {
               width: "15%",
               filter: "drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.3))",
             }}
+            alt="img"
           />
           <img
             src={Hana}
@@ -68,6 +64,7 @@ const Home = (props) => {
               right: "45%",
               filter: "drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.3))",
             }}
+            alt="img"
           />
           <img
             src={Hana}
@@ -78,6 +75,7 @@ const Home = (props) => {
               right: "30%",
               filter: "drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.3))",
             }}
+            alt="img"
           />
           <img
             src={Mise}
@@ -88,6 +86,7 @@ const Home = (props) => {
               left: 0,
               filter: "drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.3))",
             }}
+            alt="img"
           />
           <img
             src={Family}
@@ -98,6 +97,7 @@ const Home = (props) => {
               right: "50%",
               filter: "drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.3))",
             }}
+            alt="img"
           />
           <div
             style={{

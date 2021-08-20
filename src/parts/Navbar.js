@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
-import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import { Grid } from "@material-ui/core";
 import useScrollPosition from "@react-hook/window-scroll";
-import { BrowserRouter, NavLink, Route, Switch } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   Navbar: {
     backgroundColor: "rgba(0,0,0,0.3)",

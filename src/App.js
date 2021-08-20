@@ -3,13 +3,7 @@ import "./assets/sass/_typography.scss";
 import "../node_modules/noty/lib/noty.css";
 import { makeStyles } from "@material-ui/core/styles";
 import { React, useState, Suspense, lazy } from "react";
-import {
-  BrowserRouter,
-  NavLink,
-  Route,
-  Switch,
-  useLocation,
-} from "react-router-dom";
+import { NavLink, Route, Switch, useLocation } from "react-router-dom";
 import { ThemeProvider } from "@material-ui/core/styles";
 import theme from "./themes/theme";
 import Header from "./parts/Navbar";
@@ -21,7 +15,7 @@ import Button from "@material-ui/core/Button";
 import BubbleChartIcon from "@material-ui/icons/BubbleChart";
 import FolderSpecialIcon from "@material-ui/icons/FolderSpecial";
 import FaceIcon from "@material-ui/icons/Face";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import Loader from "./components/Loader/Loader";
 import Footer from "./parts/Footer";
 const useStyles = makeStyles({
@@ -58,11 +52,6 @@ const App = (props) => {
 
   const [drawer, setDrawer] = useState(false);
   const classes = useStyles();
-  const styles = {
-    paper: {
-      backgroundColor: "blue",
-    },
-  };
   const location = useLocation();
   return (
     <ThemeProvider theme={appliedTheme}>

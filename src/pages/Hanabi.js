@@ -46,7 +46,7 @@ const Home = (props) => {
       username: props.match.params.id,
       roomname: "first",
     });
-  }, []);
+  }, [props.match.params.id]);
   useEffect(() => {
     socket.on("message", (data) => {
       console.log(data);
@@ -62,21 +62,13 @@ const Home = (props) => {
       console.log(data);
       everyonefire(data.cordin, data.color);
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [socket]);
   const messagesEndRef = useRef(null);
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  // let range = (n) => [...new Array(n)];
-
-  // range(6).map(() =>
-  //   fx({
-  //     x: Math.random(window.innerWidth / 2) + window.innerWidth / 4,
-  //     y: Math.random(window.innerWidth / 2) + window.innerWidth / 4,
-  //     colors: ["#cc3333", "#4CAF50", "#81C784"],
-  //   })
-  // );
   const firework = (cordin) => {
     // fx({
     //   x: cordin.x,
@@ -97,7 +89,6 @@ const Home = (props) => {
     scrollToBottom();
   }, [messages]);
   const classes = useStyles();
-  var a = 20 + "as";
   const sendData = () => {
     if (text !== "") {
       //   //encrypt the message here
@@ -141,63 +132,69 @@ const Home = (props) => {
             style={{
               filter: "drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.3))",
             }}
+            alt="img"
           />
         </div>
         <img
           src={Hana}
           style={{
-            position: "fixed",
+            position: "absolute",
             bottom: 0,
             right: "20%",
             width: "15%",
             filter: "drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.3))",
           }}
+          alt="img"
         />
         <img
           src={Hana}
           style={{
-            position: "fixed",
+            position: "absolute",
             bottom: 0,
             width: "20%",
             right: "45%",
             filter: "drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.3))",
           }}
+          alt="img"
         />
         <img
           src={Hana}
           style={{
-            position: "fixed",
+            position: "absolute",
             bottom: 0,
             width: "22%",
             right: "30%",
             filter: "drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.3))",
           }}
+          alt="img"
         />
         <img
           src={Mise}
           style={{
-            position: "fixed",
+            position: "absolute",
             bottom: -15,
             width: "22%",
             left: 0,
             filter: "drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.3))",
           }}
+          alt="img"
         />
         <img
           src={Family}
           style={{
-            position: "fixed",
+            position: "absolute",
             bottom: -60,
             width: "30%",
             right: "50%",
             filter: "drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.3))",
           }}
+          alt="img"
         />
 
         <div
           className={classes.chat}
           style={{
-            position: "fixed",
+            position: "absolute",
             bottom: 0,
             right: 0,
             padding: "15px",
