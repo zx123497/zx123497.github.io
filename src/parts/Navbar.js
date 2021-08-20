@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import { Grid } from "@material-ui/core";
+import useScrollPosition from "@react-hook/window-scroll";
 import { BrowserRouter, NavLink, Route, Switch } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   Navbar: {
@@ -15,6 +16,12 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    transition: "0.2s",
+    "&.atTop": {
+      backgroundColor: "transparent",
+      transform: "scaleY(1.05)",
+      height: "90px",
+    },
   },
   middle: {
     display: "flex",
@@ -33,9 +40,19 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ButtonAppBar(props) {
   const classes = useStyles();
-
+  const scrollY = useScrollPosition(60 /*fps*/);
+  const [atTop, setAtTop] = useState(true);
+  if (scrollY > 50 && atTop === true) {
+    setAtTop(false);
+  }
+  if (scrollY <= 50 && atTop === false) {
+    setAtTop(true);
+  }
   return (
-    <AppBar position="fixed" className={classes.Navbar}>
+    <AppBar
+      position="fixed"
+      className={classes.Navbar + (atTop ? " atTop" : "")}
+    >
       <Grid display="inline" container justify="flex-start" alignItems="center">
         <NavLink style={{ flex: 1, marginLeft: "5rem" }} to="/">
           <h3 style={{ color: "white", fontFamily: "monospace" }}>

@@ -23,6 +23,7 @@ import FolderSpecialIcon from "@material-ui/icons/FolderSpecial";
 import FaceIcon from "@material-ui/icons/Face";
 import { AnimatePresence, motion } from "framer-motion";
 import Loader from "./components/Loader/Loader";
+import Footer from "./parts/Footer";
 const useStyles = makeStyles({
   "@keyframes fadeIn": {
     from: {
@@ -176,6 +177,7 @@ const App = (props) => {
                       </Switch>
                     </AnimatePresence>
                   </Suspense>
+                  <Footer />
                 </main>
               </>
             )}

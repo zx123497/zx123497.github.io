@@ -30,6 +30,7 @@ const Home = (props) => {
 
   return (
     <motion.div
+      style={{ position: "relative" }}
       initial={{ opacity: 0, y: -100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }}
@@ -43,7 +44,7 @@ const Home = (props) => {
             justifyContent: "center",
             alignItems: "center",
             display: "flex",
-            position: "relative",
+
             flexDirection: "column",
             borderRadius: "10px",
           }}
@@ -51,7 +52,7 @@ const Home = (props) => {
           <img
             src={Hana}
             style={{
-              position: "fixed",
+              position: "absolute",
               bottom: 0,
               right: "20%",
               width: "15%",
@@ -61,7 +62,7 @@ const Home = (props) => {
           <img
             src={Hana}
             style={{
-              position: "fixed",
+              position: "absolute",
               bottom: 0,
               width: "20%",
               right: "45%",
@@ -71,7 +72,7 @@ const Home = (props) => {
           <img
             src={Hana}
             style={{
-              position: "fixed",
+              position: "absolute",
               bottom: 0,
               width: "22%",
               right: "30%",
@@ -81,7 +82,7 @@ const Home = (props) => {
           <img
             src={Mise}
             style={{
-              position: "fixed",
+              position: "absolute",
               bottom: -15,
               width: "22%",
               left: 0,
@@ -91,8 +92,8 @@ const Home = (props) => {
           <img
             src={Family}
             style={{
-              position: "fixed",
-              bottom: -60,
+              position: "absolute",
+              bottom: -33,
               width: "30%",
               right: "50%",
               filter: "drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.3))",

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="476.211" height="104" viewBox="0 0 476.211 104">
+  <g id="Group_1" data-name="Group 1" transform="translate(-117 -137)">
+    <path id="Polygon_1" data-name="Polygon 1" d="M5.053.894a.5.5,0,0,1,.894,0l4.691,9.382a.5.5,0,0,1-.447.724H.809a.5.5,0,0,1-.447-.724Z" transform="translate(134.211 137)" fill="#fff"/>
+    <path id="Polygon_2" data-name="Polygon 2" d="M5.291.894a.5.5,0,0,1,.894,0l4.93,9.859a.5.5,0,0,1-.447.724H.809a.5.5,0,0,1-.447-.724Z" transform="translate(147.001 138.312) rotate(21)" fill="#fff"/>
+    <path id="Polygon_3" data-name="Polygon 3" d="M5.291.894a.5.5,0,0,1,.894,0l4.93,9.859a.5.5,0,0,1-.447.724H.809a.5.5,0,0,1-.447-.724Z" transform="matrix(0.643, 0.766, -0.766, 0.643, 158.423, 143.38)" fill="#fff"/>
+    <path id="Polygon_4" data-name="Polygon 4" d="M5.291.894a.5.5,0,0,1,.894,0l4.93,9.859a.5.5,0,0,1-.447.724H.809a.5.5,0,0,1-.447-.724Z" transform="matrix(0.391, 0.921, -0.921, 0.391, 166.495, 151.465)" fill="#fff"/>
+    <path id="Polygon_5" data-name="Polygon 5" d="M5.291.894a.5.5,0,0,1,.894,0l4.93,9.859a.5.5,0,0,1-.447.724H.809a.5.5,0,0,1-.447-.724Z" transform="translate(170.685 162.072) rotate(82)" fill="#fff"/>
+    <path id="Polygon_6" data-name="Polygon 6" d="M5.291.894a.5.5,0,0,1,.894,0l4.93,9.859a.5.5,0,0,1-.447.724H.809a.5.5,0,0,1-.447-.724Z" transform="translate(170.685 169.723) rotate(82)" fill="#fff"/>
+    <path id="Polygon_7" data-name="Polygon 7" d="M5.291.894a.5.5,0,0,1,.894,0l4.93,9.859a.5.5,0,0,1-.447.724H.809a.5.5,0,0,1-.447-.724Z" transform="translate(169.382 177.375) rotate(82)" fill="#fff"/>
+    <path id="Polygon_8" data-name="Polygon 8" d="M5.291.894a.5.5,0,0,1,.894,0l4.93,9.859a.5.5,0,0,1-.447.724H.809a.5.5,0,0,1-.447-.724Z" transform="translate(168.339 183.856) rotate(82)" fill="#fff"/>
+    <path id="Polygon_9" data-name="Polygon 9" d="M5.291.894a.5.5,0,0,1,.894,0l4.93,9.859a.5.5,0,0,1-.447.724H.809a.5.5,0,0,1-.447-.724Z" transform="translate(167.295 189.595) rotate(82)" fill="#fff"/>
+    <path id="Polygon_10" data-name="Polygon 10" d="M5.291.894a.5.5,0,0,1,.894,0l4.93,9.859a.5.5,0,0,1-.447.724H.809a.5.5,0,0,1-.447-.724Z" transform="translate(167.295 194.014) rotate(82)" fill="#fff"/>
+    <text id="BUBBLE_DRAGON_小天地" data-name="BUBBLE DRAGON 小天地" transform="translate(167.211 230)" fill="#ffd918" font-size="38" font-family="ShowcardGothic-Reg, Showcard Gothic"><tspan x="0" y="0">BUBBLE DRAGON </tspan><tspan y="0" fill="#fff" font-family="UDDigiKyokashoNP-B, UD Digi Kyokasho NP-B">小天地</tspan></text>
+    <path id="Path_1" data-name="Path 1" d="M18.351,1.438C30.5,1.438,31.52,21.4,31.52,44.116s23.763,35.5,11.614,35.5S4.206,70.487,4.206,47.774,6.2,1.438,18.351,1.438Z" transform="translate(130.531 151.702)" fill="#ffd918"/>
+    <path id="Path_4" data-name="Path 4" d="M21.041,0C32.662,0,42.083,8.992,42.083,20.085S32.662,40.17,21.041,40.17c-1.859,0-13.441-.668-14.147-3.525,0,0-.056-.294-.056-.294L14.2,26.48,1.295,28.723S0,21.975,0,20.085C0,8.992,9.42,0,21.041,0Z" transform="translate(117 146.564)" fill="#ffd918"/>
+    <ellipse id="Ellipse_2" data-name="Ellipse 2" cx="3" cy="4" rx="3" ry="4" transform="translate(126.211 160)" fill="#333"/>
+    <path id="Path_2" data-name="Path 2" d="M15.14,1.876c7.923,0,18.136,11.377,18.136,21.413S24.774,35.727,17.03,33.5,2.3,24.409,2.3,14.373,7.217,1.876,15.14,1.876Z" transform="translate(128.653 198.62)" fill="#ffd918"/>
+    <path id="Path_3" data-name="Path 3" d="M1.042,0c2.484,0,8.41,6.687,8.41,11.984s-2.655,7.5-5.139,7.5-3.019-3.246-3.019-8.543S-1.442,0,1.042,0Z" transform="translate(147.053 226.29) rotate(97)" fill="#ffd918"/>
+    <path id="Path_5" data-name="Path 5" d="M3.885,0C7.055,0,9.835.484,9.835,1.541S8.112,3.73,4.942,3.73,0,5.595,0,4.538.716,0,3.885,0Z" transform="matrix(0.891, -0.454, 0.454, 0.891, 128.866, 197.255)" fill="#ffd918"/>
+  </g>
+</svg>
