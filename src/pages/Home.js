@@ -260,6 +260,38 @@ const Home = () => {
         </div>
         {/* third section  */}
         <div className={classes.thirdSection}>
+          <div className="dot1" style={{ left: "5%" }} />
+          <div className="dot1" style={{ left: "20%", top: "40%" }} />
+          <div
+            className="dot2"
+            style={{
+              left: "10%",
+              top: "10%",
+              width: "4rem",
+              height: "4rem",
+            }}
+          />
+          <div
+            className="dot2"
+            style={{
+              left: "25%",
+              top: "50%",
+              width: "3rem",
+              height: "3rem",
+            }}
+          />
+          <div
+            className="dot1"
+            style={{
+              left: "15%",
+              bottom: "10%",
+              width: "5rem",
+              height: "5rem",
+            }}
+          />
+          <span className="img">
+            <img src={TutorGirl} alt="img" style={{ width: "100%" }} />
+          </span>
           <div>
             <h2 className="title">小小介紹一下我 A little bit Myself</h2>
             <div className="block">
@@ -281,7 +313,7 @@ const Home = () => {
                   擔任的是一壘手，棒壘球大概是我唯一較擅長的運動，棒球真的是很好玩的運動!!!
                 </p>
               </div>
-              <div className="imgCirc">
+              <div className="imgCirc2">
                 <img src={Baseball} alt="img" style={{ width: "100%" }} />
               </div>
             </div>
@@ -303,14 +335,11 @@ const Home = () => {
                   國中到高中都是吉他社，對於音感算是有自信，不過都是自學的關係，沒有特別的進步，很喜歡日文流行樂，尤其愛繆。
                 </p>
               </div>
-              <div className="imgCirc">
+              <div className="imgCirc2">
                 <img src={HomeImage} alt="img" style={{ width: "100%" }} />
               </div>
             </div>
           </div>
-          <span className="img">
-            <img src={TutorGirl} alt="img" style={{ width: "100%" }} />
-          </span>
         </div>
       </div>
     </motion.div>
@@ -375,14 +404,15 @@ const useStyles = makeStyles({
   },
   thirdSection: {
     display: "flex",
-    backgroundColor: "#FFF",
+    backgroundColor: "#222",
     position: "relative",
     justifyContent: "center",
     padding: "5rem",
     "& .title": {
-      color: "#555",
+      color: "#FFF",
       textAlign: "center",
       marginBottom: "3rem",
+      position: "relative",
     },
     "& .img": {
       position: "absolute",
@@ -393,15 +423,17 @@ const useStyles = makeStyles({
     },
     "& .desc": {
       flex: 1,
-      color: "#555",
+      color: "#ccc",
     },
     "& .block": {
       display: "flex",
       margin: "1rem auto",
       width: "50%",
+      minWidth: "30rem",
       padding: "1rem 3rem",
       justifyContent: "center",
       alignItems: "center",
+      position: "relative",
     },
     "& .imgCirc": {
       margin: "0 2rem",
@@ -410,14 +442,64 @@ const useStyles = makeStyles({
       height: "7rem",
       borderRadius: "50%",
       overflow: "hidden",
-      boxShadow: "3px 3px 6px rgba(0,0,0,0.3)",
+      // boxShadow: "3px 3px 6px rgba(0,0,0,0.3)",
       justifyContent: "center",
       alignItems: "center",
       backgroundColor: "#000",
+      // animation: "$radio 1.5s ease-out .75s infinite",
+    },
+    "& .imgCirc2": {
+      margin: "0 2rem",
+      display: "flex",
+      width: "7rem",
+      height: "7rem",
+      borderRadius: "50%",
+      overflow: "hidden",
+      // boxShadow: "3px 3px 6px rgba(0,0,0,0.3)",
+      justifyContent: "center",
+      alignItems: "center",
+      backgroundColor: "#000",
+      // animation: "$radio2 1.5s ease-out .75s infinite",
     },
     "& .imgCirc:hover": {
       transform: "scale(1.1)",
-      transition: "all 400ms cubic-bezier(.47,3,.6,.8) ",
+      transition: "all 400ms cubic-bezier(.47,2,.6,.8) ",
+    },
+    "& .imgCirc2:hover": {
+      transform: "scale(1.1)",
+      transition: "all 400ms cubic-bezier(.47,2,.6,.8) ",
+    },
+    "& .dot1": {
+      width: "2rem",
+      height: "2rem",
+      position: "absolute",
+      borderRadius: "50%",
+      backgroundColor: "rgba(255,217,24,.7)",
+      animation: "$radio 1.5s ease-out .75s infinite",
+    },
+    "& .dot2": {
+      width: "2rem",
+      height: "2rem",
+      position: "absolute",
+      borderRadius: "50%",
+      backgroundColor: "rgba(117, 13, 252,.7)",
+      animation: "$radio2 1.5s ease-out .75s infinite",
+    },
+  },
+  "@keyframes radio": {
+    "0%": {
+      boxShadow: "0 0 0px rgba(255,217,24,1)",
+    },
+    "100%": {
+      boxShadow: "0 0 100px rgba(255,217,24,0)",
+    },
+  },
+  "@keyframes radio2": {
+    "0%": {
+      boxShadow: "0 0 0px rgba(117, 13, 252,.9)",
+    },
+    "100%": {
+      boxShadow: "0 0 50px rgba(117, 13, 252,0)",
     },
   },
 });
