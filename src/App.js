@@ -109,7 +109,7 @@ const App = (props) => {
                       <NavLink 
                       onClick={() => setDrawer(false)} 
                       style={{ color: "#FFF", fontSize: "18px", display:"flex", alignItems:"center" }} 
-                      to="/partner"
+                      to="/entry"
                       >
                         <BubbleChartIcon style={{ marginRight: "1rem" }} />
                         花火大會
