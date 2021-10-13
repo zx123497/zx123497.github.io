@@ -154,6 +154,7 @@ const Home = (props) => {
                 width: "100%",
 
                 color: "#FFF",
+                textAlign: "center",
                 border: "2px rgba(255,255,255,.2) solid",
                 marginTop: "20px",
               }}

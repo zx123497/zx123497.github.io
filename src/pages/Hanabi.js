@@ -24,6 +24,10 @@ const useStyles = makeStyles({
   chat: {
     backdropFilter: "blur(10px)",
   },
+  imageDefault:{
+    WebkitUserSelect: "none",
+    WebkitUserDrag: "none"
+  }
 });
 
 function getRandomColor() {
@@ -127,7 +131,7 @@ const Home = (props) => {
             alignItems: "center",
           }}
         >
-          <img
+          <img className = {classes.imageDefault}
             src={Title}
             style={{
               filter: "drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.3))",
@@ -135,7 +139,7 @@ const Home = (props) => {
             alt="img"
           />
         </div>
-        <img
+        <img className = {classes.imageDefault}
           src={Hana}
           style={{
             position: "absolute",
@@ -146,7 +150,7 @@ const Home = (props) => {
           }}
           alt="img"
         />
-        <img
+        <img className = {classes.imageDefault}
           src={Hana}
           style={{
             position: "absolute",
@@ -157,7 +161,7 @@ const Home = (props) => {
           }}
           alt="img"
         />
-        <img
+        <img className = {classes.imageDefault}
           src={Hana}
           style={{
             position: "absolute",
@@ -168,7 +172,7 @@ const Home = (props) => {
           }}
           alt="img"
         />
-        <img
+        <img className = {classes.imageDefault}
           src={Mise}
           style={{
             position: "absolute",
@@ -179,7 +183,7 @@ const Home = (props) => {
           }}
           alt="img"
         />
-        <img
+        <img className = {classes.imageDefault}
           src={Family}
           style={{
             position: "absolute",
