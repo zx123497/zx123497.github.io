@@ -24,10 +24,10 @@ const useStyles = makeStyles({
   chat: {
     backdropFilter: "blur(10px)",
   },
-  imageDefault:{
+  imageDefault: {
     WebkitUserSelect: "none",
-    WebkitUserDrag: "none"
-  }
+    WebkitUserDrag: "none",
+  },
 });
 
 function getRandomColor() {
@@ -70,7 +70,11 @@ const Home = (props) => {
   }, [socket]);
   const messagesEndRef = useRef(null);
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    messagesEndRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+      inline: "start",
+    });
   };
 
   const firework = (cordin) => {
@@ -131,7 +135,8 @@ const Home = (props) => {
             alignItems: "center",
           }}
         >
-          <img className = {classes.imageDefault}
+          <img
+            className={classes.imageDefault}
             src={Title}
             style={{
               filter: "drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.3))",
@@ -139,7 +144,8 @@ const Home = (props) => {
             alt="img"
           />
         </div>
-        <img className = {classes.imageDefault}
+        <img
+          className={classes.imageDefault}
           src={Hana}
           style={{
             position: "absolute",
@@ -150,7 +156,8 @@ const Home = (props) => {
           }}
           alt="img"
         />
-        <img className = {classes.imageDefault}
+        <img
+          className={classes.imageDefault}
           src={Hana}
           style={{
             position: "absolute",
@@ -161,7 +168,8 @@ const Home = (props) => {
           }}
           alt="img"
         />
-        <img className = {classes.imageDefault}
+        <img
+          className={classes.imageDefault}
           src={Hana}
           style={{
             position: "absolute",
@@ -172,7 +180,8 @@ const Home = (props) => {
           }}
           alt="img"
         />
-        <img className = {classes.imageDefault}
+        <img
+          className={classes.imageDefault}
           src={Mise}
           style={{
             position: "absolute",
@@ -183,7 +192,8 @@ const Home = (props) => {
           }}
           alt="img"
         />
-        <img className = {classes.imageDefault}
+        <img
+          className={classes.imageDefault}
           src={Family}
           style={{
             position: "absolute",
