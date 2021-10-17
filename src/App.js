@@ -15,9 +15,11 @@ import Button from "@material-ui/core/Button";
 import BubbleChartIcon from "@material-ui/icons/BubbleChart";
 import FolderSpecialIcon from "@material-ui/icons/FolderSpecial";
 import FaceIcon from "@material-ui/icons/Face";
+import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
 import { AnimatePresence } from "framer-motion";
 import Loader from "./components/Loader/Loader";
 import Footer from "./parts/Footer";
+import { StepIcon } from "@material-ui/core";
 const useStyles = makeStyles({
   "@keyframes fadeIn": {
     from: {
@@ -47,6 +49,8 @@ const useStyles = makeStyles({
 const Home = lazy(() => import("./pages/Home"));
 const Entry = lazy(() => import("./pages/Entry"));
 const Hanabi = lazy(() => import("./pages/Hanabi"));
+const Partner = lazy(() => import("./pages/Partner"));
+
 const App = (props) => {
   const appliedTheme = theme;
 
@@ -102,10 +106,10 @@ const App = (props) => {
                         margin: "1rem 0 0  0",
                       }}
                     >
-                      <NavLink
-                        onClick={() => setDrawer(false)}
-                        style={{ color: "#FFF", fontSize: "18px" }}
-                        to="/entry"
+                      <NavLink 
+                      onClick={() => setDrawer(false)} 
+                      style={{ color: "#FFF", fontSize: "18px", display:"flex", alignItems:"center" }} 
+                      to="/entry"
                       >
                         <BubbleChartIcon style={{ marginRight: "1rem" }} />
                         花火大會
@@ -116,21 +120,41 @@ const App = (props) => {
                         margin: "1rem 0 0 0 ",
                       }}
                     >
-                      <Button style={{ color: "#FFF", fontSize: "18px" }}>
+                      <NavLink 
+                      onClick={() => setDrawer(false)} 
+                      style={{ color: "#FFF", fontSize: "18px", display:"flex", alignItems:"center" }} 
+                      to="/partner"
+                      >
                         <FolderSpecialIcon style={{ marginRight: "1rem" }} />
                         網頁作品專案
-                      </Button>
+                      </NavLink>
                     </div>
                     <div
                       style={{
                         margin: "1rem 0 0 0",
                       }}
                     >
-                      <Button style={{ color: "#FFF", fontSize: "18px" }}>
+                      <NavLink 
+                      onClick={() => setDrawer(false)} 
+                      style={{ color: "#FFF", fontSize: "18px", display:"flex", alignItems:"center" }} 
+                      to="/partner"
+                      >
                         <FaceIcon style={{ marginRight: "1rem" }} />
                         關於我
-                      </Button>
+                      </NavLink>
                     </div>
+
+                    <div style={{margin: "1rem 0 0 0",}}>
+                      <NavLink
+                      onClick={() => setDrawer(false)} 
+                      style={{ color: "#FFF", fontSize: "18px", display:"flex", alignItems:"center" }} 
+                      to="/partner"
+                      >
+                        <AssignmentIndIcon style={{ marginRight: "1rem" }} />
+                        合作夥伴
+                      </NavLink>
+                    </div>
+
                   </div>
                 </Drawer>
 
@@ -163,6 +187,7 @@ const App = (props) => {
                         <Route path="/" exact component={Home} />
                         <Route path="/entry" exact component={Entry} />
                         <Route path="/hanabi/:id" exact component={Hanabi} />
+                        <Route path="/partner" exact component={Partner}/>
                       </Switch>
                     </AnimatePresence>
                   </Suspense>
