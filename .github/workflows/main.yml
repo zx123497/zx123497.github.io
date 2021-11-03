@@ -7,12 +7,12 @@ jobs:
       - name: Checkout ️ 
         uses: actions/checkout@v2 
         
-      - name: Install and Build :wrench:
+      - name: Install and Build!
         run: | 
           npm install 
           npm run build
           
-      - name: Deploy :rocket: 
+      - name: Deploy!
         uses: JamesIves/github-pages-deploy-action@releases/v3 
         with: 
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }} 
