@@ -16,13 +16,13 @@ module.exports = {
     },
     plugins: ['react'],
     rules: {
-        'indent': ['error', 4],
+        indent: ['error', 4],
         'linebreak-style': ['off', 'windows'],
-        'quotes': ['error', 'single'],
-        'semi': ['error', 'never'],
+        quotes: ['error', 'single'],
+        semi: ['error', 'never'],
         'object-curly-spacing': ['error', 'always'],
         'react/prop-types': 'off',
         'max-len': ['error', { code: 120 }],
-        'quote-props': 'warn',
+        'quote-props': ['warn', 'as-needed'],
     },
 }
