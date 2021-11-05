@@ -85,12 +85,12 @@ export default Loader
 
 const useStyles = makeStyles(() => ({
     Loader: {
-        'width': '100%',
-        'minWidth': '300px',
-        'padding': 15,
-        'display': 'flex',
-        'justifyContent': 'center',
-        'alignItems': 'center',
+        width: '100%',
+        minWidth: '300px',
+        padding: 15,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
         '& svg rect': {
             fill: 'aqua',
         },

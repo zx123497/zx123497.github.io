@@ -9,14 +9,14 @@ import useScrollPosition from '@react-hook/window-scroll'
 import { NavLink } from 'react-router-dom'
 const useStyles = makeStyles((theme) => ({
     Navbar: {
-        'backgroundColor': 'rgba(0,0,0,0.3)',
-        'backdropFilter': 'blur(5px)',
-        'boxShadow': '0 0 0 rgba(0,0,0,0)',
-        'height': '70px',
-        'display': 'flex',
-        'alignItems': 'center',
-        'justifyContent': 'center',
-        'transition': '0.2s',
+        backgroundColor: 'rgba(0,0,0,0.3)',
+        backdropFilter: 'blur(5px)',
+        boxShadow: '0 0 0 rgba(0,0,0,0)',
+        height: '70px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        transition: '0.2s',
         '&.atTop': {
             backgroundColor: 'transparent',
             transform: 'scaleY(1.05)',

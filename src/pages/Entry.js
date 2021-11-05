@@ -108,16 +108,12 @@ const Home = (props) => {
                             justifyContent: 'center',
                         }}
                     >
-                        <FilterVintageIcon
-                            style={{ margin: '0 1rem', color: '#FFF' }}
-                        />
+                        <FilterVintageIcon style={{ margin: '0 1rem', color: '#FFF' }} />
                         <h1 style={{ color: 'red', margin: '0' }}>花</h1>
                         <h1 style={{ color: 'yellow', margin: '0' }}>火</h1>
                         <h1 style={{ color: 'pink', margin: '0' }}>大</h1>
                         <h1 style={{ color: 'aqua', margin: '0' }}>会</h1>
-                        <FilterVintageIcon
-                            style={{ margin: '0 1rem', color: '#FFF' }}
-                        />
+                        <FilterVintageIcon style={{ margin: '0 1rem', color: '#FFF' }} />
                     </div>
 
                     <div
@@ -138,7 +134,7 @@ const Home = (props) => {
                         >
                             <Input
                                 style={{
-                                    'color': '#FFF',
+                                    color: '#FFF',
 
                                     '&.MuiInput-underline:before': {
                                         borderBottom: '1px solid #FFF',

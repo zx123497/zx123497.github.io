@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core'
 import { motion } from 'framer-motion'
 import { CirclePicker } from 'react-color'
 const useStyles = makeStyles({
-    'titlediv': {
+    titlediv: {
         display: 'flex',
         width: '100%',
         height: '100vh',
@@ -11,7 +11,7 @@ const useStyles = makeStyles({
         alignItems: 'center',
         position: 'relative',
     },
-    'colorSquare': {
+    colorSquare: {
         animation: '$spin infinite 20s linear',
     },
     '@keyframes spin': {

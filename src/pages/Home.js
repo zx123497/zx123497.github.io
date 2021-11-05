@@ -104,11 +104,7 @@ const Home = () => {
                             }}
                             style={{ width: '100%' }}
                         >
-                            <img
-                                src={Title}
-                                style={{ width: '100%', height: 'auto' }}
-                                alt="img"
-                            />
+                            <img src={Title} style={{ width: '100%', height: 'auto' }} alt="img" />
                         </motion.div>
                         <motion.h3
                             initial={{ opacity: 0, x: 100 }}
@@ -155,9 +151,7 @@ const Home = () => {
                     ref={ref}
                 >
                     <div style={{ position: 'relative' }}>
-                        <h2 style={{ marginBottom: '3rem', color: '#555' }}>
-                            我的專長 My Service
-                        </h2>
+                        <h2 style={{ marginBottom: '3rem', color: '#555' }}>我的專長 My Service</h2>
                         <motion.div
                             style={{
                                 display: 'flex',
@@ -180,8 +174,7 @@ const Home = () => {
                                         height: '20rem',
                                         marginRight: '2rem',
                                         borderRadius: '10px',
-                                        boxShadow:
-                                            '3px 3px 6px rgba(0,0,0,0.2)',
+                                        boxShadow: '3px 3px 6px rgba(0,0,0,0.2)',
                                         backgroundColor: 'rgba(255,217,24,.9)',
                                         padding: '2rem',
                                     }}
@@ -218,10 +211,8 @@ const Home = () => {
                                         height: '20rem',
                                         marginRight: '2rem',
                                         borderRadius: '10px',
-                                        boxShadow:
-                                            '3px 3px 6px rgba(0,0,0,0.2)',
-                                        backgroundColor:
-                                            'rgba(100,100,100,.95)',
+                                        boxShadow: '3px 3px 6px rgba(0,0,0,0.2)',
+                                        backgroundColor: 'rgba(100,100,100,.95)',
                                         padding: '2rem',
                                     }}
                                 >
@@ -236,9 +227,7 @@ const Home = () => {
                                         />
                                     </div>
                                     <div>
-                                        <h3 style={{ color: '#FFF' }}>
-                                            前端開發
-                                        </h3>
+                                        <h3 style={{ color: '#FFF' }}>前端開發</h3>
                                     </div>
                                     <div>
                                         <h5
@@ -247,8 +236,7 @@ const Home = () => {
                                                 lineHeight: '1.5rem',
                                             }}
                                         >
-                                            熟悉的前端框架為React、React
-                                            native，最喜歡的套件是Framer
+                                            熟悉的前端框架為React、React native，最喜歡的套件是Framer
                                             Motion，他是個很厲害的動畫套件，在大學就接觸滿多前端的任務
                                         </h5>
                                     </div>
@@ -260,10 +248,8 @@ const Home = () => {
                                         height: '20rem',
                                         marginRight: '2rem',
                                         borderRadius: '10px',
-                                        boxShadow:
-                                            '3px 3px 6px rgba(0,0,0,0.2)',
-                                        backgroundColor:
-                                            'rgba(255,255,255,.95)',
+                                        boxShadow: '3px 3px 6px rgba(0,0,0,0.2)',
+                                        backgroundColor: 'rgba(255,255,255,.95)',
                                         padding: '2rem',
                                     }}
                                 >
@@ -328,23 +314,13 @@ const Home = () => {
                         }}
                     />
                     <span className="img">
-                        <img
-                            src={TutorGirl}
-                            alt="img"
-                            style={{ width: '100%' }}
-                        />
+                        <img src={TutorGirl} alt="img" style={{ width: '100%' }} />
                     </span>
                     <div>
-                        <h2 className="title">
-                            小小介紹一下我 A little bit Myself
-                        </h2>
+                        <h2 className="title">小小介紹一下我 A little bit Myself</h2>
                         <div className="block">
                             <div className="imgCirc">
-                                <img
-                                    src={Draw}
-                                    alt="img"
-                                    style={{ width: '100%' }}
-                                />
+                                <img src={Draw} alt="img" style={{ width: '100%' }} />
                             </div>
                             <div className="desc">
                                 <h4>美術狂熱份子</h4>
@@ -357,25 +333,15 @@ const Home = () => {
                         <div className="block">
                             <div className="desc">
                                 <h4>資管系壘隊員</h4>
-                                <p>
-                                    擔任的是一壘手，棒壘球大概是我唯一較擅長的運動，棒球真的是很好玩的運動!!!
-                                </p>
+                                <p>擔任的是一壘手，棒壘球大概是我唯一較擅長的運動，棒球真的是很好玩的運動!!!</p>
                             </div>
                             <div className="imgCirc2">
-                                <img
-                                    src={Baseball}
-                                    alt="img"
-                                    style={{ width: '100%' }}
-                                />
+                                <img src={Baseball} alt="img" style={{ width: '100%' }} />
                             </div>
                         </div>
                         <div className="block">
                             <div className="imgCirc">
-                                <img
-                                    src={Baseball}
-                                    alt="img"
-                                    style={{ width: '100%' }}
-                                />
+                                <img src={Baseball} alt="img" style={{ width: '100%' }} />
                             </div>
                             <div className="desc">
                                 <h4>健身愛好者</h4>
@@ -392,11 +358,7 @@ const Home = () => {
                                 </p>
                             </div>
                             <div className="imgCirc2">
-                                <img
-                                    src={HomeImage}
-                                    alt="img"
-                                    style={{ width: '100%' }}
-                                />
+                                <img src={HomeImage} alt="img" style={{ width: '100%' }} />
                             </div>
                         </div>
                     </div>
@@ -407,10 +369,10 @@ const Home = () => {
 }
 
 const useStyles = makeStyles({
-    'root': {
-        'width': '100%',
-        'display': 'flex',
-        'flexDirection': 'column',
+    root: {
+        width: '100%',
+        display: 'flex',
+        flexDirection: 'column',
         '@media (-width:768px)': {},
         '& .nextBut': {
             width: '50px',
@@ -434,13 +396,13 @@ const useStyles = makeStyles({
         },
     },
 
-    'bar': {
-        'position': 'absolute',
-        'width': '100%',
-        'bottom': 0,
-        'left': 0,
-        'zIndex': 3,
-        'textAlign': 'center',
+    bar: {
+        position: 'absolute',
+        width: '100%',
+        bottom: 0,
+        left: 0,
+        zIndex: 3,
+        textAlign: 'center',
         '& .scroll': {
             height: '60px',
             margin: ' 0.6rem auto 0',
@@ -462,12 +424,12 @@ const useStyles = makeStyles({
             willChange: 'transform',
         },
     },
-    'thirdSection': {
-        'display': 'flex',
-        'backgroundColor': '#222',
-        'position': 'relative',
-        'justifyContent': 'center',
-        'padding': '5rem',
+    thirdSection: {
+        display: 'flex',
+        backgroundColor: '#222',
+        position: 'relative',
+        justifyContent: 'center',
+        padding: '5rem',
         '& .title': {
             color: '#FFF',
             textAlign: 'center',
