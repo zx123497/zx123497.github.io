@@ -8,10 +8,6 @@ import { ThemeProvider } from '@material-ui/core/styles'
 import theme from './themes/theme'
 import Header from './parts/Navbar'
 import Drawer from '@material-ui/core/Drawer'
-import Button from '@material-ui/core/Button'
-// import Home from "./pages/Home";
-// import Hanabi from "./pages/Hanabi";
-// import Entry from "./pages/Entry";
 import BubbleChartIcon from '@material-ui/icons/BubbleChart'
 import FolderSpecialIcon from '@material-ui/icons/FolderSpecial'
 import FaceIcon from '@material-ui/icons/Face'
@@ -19,7 +15,12 @@ import AssignmentIndIcon from '@material-ui/icons/AssignmentInd'
 import { AnimatePresence } from 'framer-motion'
 import Loader from './components/Loader/Loader'
 import Footer from './parts/Footer'
-import { StepIcon } from '@material-ui/core'
+const Home = lazy(() => import('./pages/Home'))
+const Entry = lazy(() => import('./pages/Entry'))
+const Hanabi = lazy(() => import('./pages/Hanabi'))
+const Partner = lazy(() => import('./pages/Partner'))
+const Works = lazy(() => import('./pages/Works'))
+
 const useStyles = makeStyles({
     '@keyframes fadeIn': {
         from: {
@@ -45,12 +46,6 @@ const useStyles = makeStyles({
         },
     },
 })
-
-const Home = lazy(() => import('./pages/Home'))
-const Entry = lazy(() => import('./pages/Entry'))
-const Hanabi = lazy(() => import('./pages/Hanabi'))
-const Partner = lazy(() => import('./pages/Partner'))
-const Works = lazy(() => import('./pages/Works'))
 
 const App = (props) => {
     const appliedTheme = theme
@@ -216,39 +211,12 @@ const App = (props) => {
                                         }
                                     >
                                         <AnimatePresence exitBeforeEnter>
-                                            <Switch
-                                                location={location}
-                                                key={
-                                                    location.pathname.split(
-                                                        '/'
-                                                    )[1]
-                                                }
-                                            >
-                                                <Route
-                                                    path="/"
-                                                    exact
-                                                    component={Home}
-                                                />
-                                                <Route
-                                                    path="/entry"
-                                                    exact
-                                                    component={Entry}
-                                                />
-                                                <Route
-                                                    path="/hanabi/:id"
-                                                    exact
-                                                    component={Hanabi}
-                                                />
-                                                <Route
-                                                    path="/partner"
-                                                    exact
-                                                    component={Partner}
-                                                />
-                                                <Route
-                                                    path="/works"
-                                                    exact
-                                                    component={Works}
-                                                />
+                                            <Switch location={location} key={location.pathname.split('/')[1]}>
+                                                <Route path="/" exact component={Home} />
+                                                <Route path="/entry" exact component={Entry} />
+                                                <Route path="/hanabi/:id" exact component={Hanabi} />
+                                                <Route path="/partner" exact component={Partner} />
+                                                <Route path="/works" exact component={Works} />
                                             </Switch>
                                         </AnimatePresence>
                                     </Suspense>

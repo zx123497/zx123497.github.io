@@ -1,3 +1,7 @@
+/* eslint-disable react/jsx-key */
+/* eslint-disable max-len */
+/* eslint-disable react/prop-types */
+/* eslint-disable require-jsdoc */
 import React, { useState, useEffect, useRef } from 'react'
 import Hana from '../assets/hana.png'
 import Title from '../assets/title.png'
@@ -34,9 +38,9 @@ const socket = io.connect('https://damp-tor-27437.herokuapp.com/', {
     forceNew: true,
 })
 function getRandomColor() {
-    var letters = '0123456789ABCDEF'
-    var color = '#'
-    for (var i = 0; i < 6; i++) {
+    const letters = '0123456789ABCDEF'
+    let color = '#'
+    for (let i = 0; i < 6; i++) {
         color += letters[Math.floor(Math.random() * 16)]
     }
     return color
@@ -72,7 +76,7 @@ const Home = (props) => {
     useEffect(() => {
         socket.on('message', (data) => {
             console.log(data)
-            let temp = messages
+            const temp = messages
             temp.push({
                 userId: data.userId,
                 username: data.username,
@@ -84,15 +88,16 @@ const Home = (props) => {
             console.log(data)
             everyonefire(data.cordin, data.color)
         })
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [socket])
     const messagesEndRef = useRef(null)
     const scrollToBottom = () => {
-        messagesEndRef.current ? scrollIntoView({
-            behavior: 'smooth',
-            block: 'nearest',
-            inline: 'start',
-        })
+        if (messagesEndRef.current) {
+            scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest',
+                inline: 'start',
+            })
+        }
     }
 
     const firework = (cordin) => {
@@ -281,12 +286,12 @@ const Home = (props) => {
                                 <div
                                     style={
                                         row.text ===
-                                        `${row.username} 也加入花火大會了，打聲招呼吧~`
-                                            ? { color: 'orange' }
-                                            : row.text ===
-                                              `${row.username} 離開花火大會 ~`
-                                            ? { color: 'rgba(255,255,255,0.3)' }
-                                            : {}
+                                        `${row.username} 也加入花火大會了，打聲招呼吧~` ?
+                                            { color: 'orange' } :
+                                            row.text ===
+                                              `${row.username} 離開花火大會 ~` ?
+                                                { color: 'rgba(255,255,255,0.3)' } :
+                                                {}
                                     }
                                 >
                                     {row.username} : {row.text}

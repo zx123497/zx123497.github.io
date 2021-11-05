@@ -1,7 +1,7 @@
-import React, {useState} from 'react'
-import {makeStyles} from '@material-ui/core'
-import {motion} from 'framer-motion'
-import {CirclePicker} from 'react-color'
+import React, { useState } from 'react'
+import { makeStyles } from '@material-ui/core'
+import { motion } from 'framer-motion'
+import { CirclePicker } from 'react-color'
 const useStyles = makeStyles({
     'titlediv': {
         display: 'flex',
@@ -33,9 +33,9 @@ const Works = (props) => {
     }
     return (
         <motion.div
-            initial={{opacity: 0, y: 20}}
-            animate={{opacity: 1, y: 0}}
-            transition={{duration: 1}}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
             exit={{
                 opacity: 0,
                 y: -100,
@@ -63,7 +63,7 @@ const Works = (props) => {
                         // opacity: 0.5,
                     }}
                 />
-                <div style={{position: 'absolute', bottom: 10, right: 10}}>
+                <div style={{ position: 'absolute', bottom: 10, right: 10 }}>
                     <CirclePicker onChangeComplete={handleChangeColor} />
                 </div>
             </div>

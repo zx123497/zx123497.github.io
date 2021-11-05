@@ -9,7 +9,7 @@ const Partner = () => {
                 alignItems: 'center',
             }}
         >
-            <h1 style={{color: '#FFF'}}>大家好</h1>
+            <h1 style={{ color: '#FFF' }}>大家好</h1>
         </div>
     )
 }

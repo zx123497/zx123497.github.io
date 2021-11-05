@@ -20,5 +20,9 @@ module.exports = {
         'linebreak-style': ['off', 'windows'],
         'quotes': ['error', 'single'],
         'semi': ['error', 'never'],
+        'object-curly-spacing': ['error', 'always'],
+        'react/prop-types': 'off',
+        'max-len': ['error', { code: 120 }],
+        'quote-props': ['warn'],
     },
 }

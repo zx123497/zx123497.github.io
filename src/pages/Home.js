@@ -1,8 +1,9 @@
-import React, {useEffect, useRef} from 'react'
-import {makeStyles} from '@material-ui/core/styles'
+/* eslint-disable max-len */
+import React, { useEffect, useRef } from 'react'
+import { makeStyles } from '@material-ui/core/styles'
 
-import {useInView} from 'react-intersection-observer'
-import {motion, useAnimation} from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
+import { motion, useAnimation } from 'framer-motion'
 
 import Title from '../assets/title.svg'
 import HomeImage from '../assets/HomeImage.JPG'
@@ -14,15 +15,9 @@ import Paint from '../assets/paint-palette.svg'
 import Baseball from '../assets/baseball.jpg'
 import Draw from '../assets/Draw.JPG'
 
-function FadeInWhenVisible({children, delay}) {
+const FadeInWhenVisible = ({ children, delay }) => {
     const controls = useAnimation()
     const [ref, inView] = useInView()
-    const sdf = sadasd
-    const func = () => {
-        const a = 0
-        safsf
-    }
-    const [start, efef] = useState('asdasd')
 
     useEffect(() => {
         if (inView) {
@@ -35,15 +30,15 @@ function FadeInWhenVisible({children, delay}) {
             ref={ref}
             animate={controls}
             initial="hidden"
-            transition={{duration: 0.3}}
+            transition={{ duration: 0.3 }}
             variants={{
-                whileHover: {scale: 1.1},
-                hidden: {opacity: 0, scale: 0, y: 300},
+                whileHover: { scale: 1.1 },
+                hidden: { opacity: 0, scale: 0, y: 300 },
                 show: {
                     opacity: 1,
                     scale: 1,
                     y: 0,
-                    transition: {duration: 1, ease: 'backOut', delay: delay},
+                    transition: { duration: 1, ease: 'backOut', delay: delay },
                 },
             }}
         >
@@ -61,9 +56,9 @@ const Home = () => {
     const classes = useStyles()
     return (
         <motion.div
-            initial={{opacity: 0, y: 20}}
-            animate={{opacity: 1, y: 0}}
-            transition={{duration: 1}}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
             exit={{
                 opacity: 0,
                 y: -100,
@@ -97,7 +92,7 @@ const Home = () => {
                         }}
                     >
                         <motion.div
-                            initial={{opacity: 0, x: -100}}
+                            initial={{ opacity: 0, x: -100 }}
                             animate={{
                                 opacity: 1,
                                 x: 0,
@@ -107,16 +102,16 @@ const Home = () => {
                                     ease: 'easeInOut',
                                 },
                             }}
-                            style={{width: '100%'}}
+                            style={{ width: '100%' }}
                         >
                             <img
                                 src={Title}
-                                style={{width: '100%', height: 'auto'}}
+                                style={{ width: '100%', height: 'auto' }}
                                 alt="img"
                             />
                         </motion.div>
                         <motion.h3
-                            initial={{opacity: 0, x: 100}}
+                            initial={{ opacity: 0, x: 100 }}
                             animate={{
                                 opacity: 1,
                                 x: 0,
@@ -126,7 +121,7 @@ const Home = () => {
                                     ease: 'easeInOut',
                                 },
                             }}
-                            style={{color: '#999'}}
+                            style={{ color: '#999' }}
                         >
                             Record my Life and Journey
                         </motion.h3>
@@ -159,8 +154,8 @@ const Home = () => {
                     }}
                     ref={ref}
                 >
-                    <div style={{position: 'relative'}}>
-                        <h2 style={{marginBottom: '3rem', color: '#555'}}>
+                    <div style={{ position: 'relative' }}>
+                        <h2 style={{ marginBottom: '3rem', color: '#555' }}>
                             我的專長 My Service
                         </h2>
                         <motion.div
@@ -170,7 +165,7 @@ const Home = () => {
                                 width: '100%',
                             }}
                             variants={{
-                                hidden: {opacity: 0, y: 0},
+                                hidden: { opacity: 0, y: 0 },
                                 show: {
                                     opacity: 1,
                                     y: 0,
@@ -241,7 +236,7 @@ const Home = () => {
                                         />
                                     </div>
                                     <div>
-                                        <h3 style={{color: '#FFF'}}>
+                                        <h3 style={{ color: '#FFF' }}>
                                             前端開發
                                         </h3>
                                     </div>
@@ -303,8 +298,8 @@ const Home = () => {
                 </div>
                 {/* third section  */}
                 <div className={classes.thirdSection}>
-                    <div className="dot1" style={{left: '5%'}} />
-                    <div className="dot1" style={{left: '20%', top: '40%'}} />
+                    <div className="dot1" style={{ left: '5%' }} />
+                    <div className="dot1" style={{ left: '20%', top: '40%' }} />
                     <div
                         className="dot2"
                         style={{
@@ -336,7 +331,7 @@ const Home = () => {
                         <img
                             src={TutorGirl}
                             alt="img"
-                            style={{width: '100%'}}
+                            style={{ width: '100%' }}
                         />
                     </span>
                     <div>
@@ -348,7 +343,7 @@ const Home = () => {
                                 <img
                                     src={Draw}
                                     alt="img"
-                                    style={{width: '100%'}}
+                                    style={{ width: '100%' }}
                                 />
                             </div>
                             <div className="desc">
@@ -370,7 +365,7 @@ const Home = () => {
                                 <img
                                     src={Baseball}
                                     alt="img"
-                                    style={{width: '100%'}}
+                                    style={{ width: '100%' }}
                                 />
                             </div>
                         </div>
@@ -379,7 +374,7 @@ const Home = () => {
                                 <img
                                     src={Baseball}
                                     alt="img"
-                                    style={{width: '100%'}}
+                                    style={{ width: '100%' }}
                                 />
                             </div>
                             <div className="desc">
@@ -400,7 +395,7 @@ const Home = () => {
                                 <img
                                     src={HomeImage}
                                     alt="img"
-                                    style={{width: '100%'}}
+                                    style={{ width: '100%' }}
                                 />
                             </div>
                         </div>

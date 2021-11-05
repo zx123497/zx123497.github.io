@@ -1,13 +1,13 @@
 /* eslint-disable max-len */
-import React, {useState} from 'react'
-import {makeStyles} from '@material-ui/core/styles'
+import React, { useState } from 'react'
+import { makeStyles } from '@material-ui/core/styles'
 import Hana from '../assets/hana.png'
 import Family from '../assets/family.png'
 import Mise from '../assets/mise.png'
 import FilterVintageIcon from '@material-ui/icons/FilterVintage'
 import Input from '@material-ui/core/Input'
-import {motion} from 'framer-motion'
-import {NavLink} from 'react-router-dom'
+import { motion } from 'framer-motion'
+import { NavLink } from 'react-router-dom'
 const useStyles = makeStyles({
     root: {
         width: '100%',
@@ -26,11 +26,11 @@ const Home = (props) => {
 
     return (
         <motion.div
-            style={{position: 'relative'}}
-            initial={{opacity: 0, y: -100}}
-            animate={{opacity: 1, y: 0}}
-            transition={{duration: 1}}
-            exit={{opacity: 0, y: -100}}
+            style={{ position: 'relative' }}
+            initial={{ opacity: 0, y: -100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            exit={{ opacity: 0, y: -100 }}
         >
             <div className={classes.root}>
                 <div
@@ -109,14 +109,14 @@ const Home = (props) => {
                         }}
                     >
                         <FilterVintageIcon
-                            style={{margin: '0 1rem', color: '#FFF'}}
+                            style={{ margin: '0 1rem', color: '#FFF' }}
                         />
-                        <h1 style={{color: 'red', margin: '0'}}>花</h1>
-                        <h1 style={{color: 'yellow', margin: '0'}}>火</h1>
-                        <h1 style={{color: 'pink', margin: '0'}}>大</h1>
-                        <h1 style={{color: 'aqua', margin: '0'}}>会</h1>
+                        <h1 style={{ color: 'red', margin: '0' }}>花</h1>
+                        <h1 style={{ color: 'yellow', margin: '0' }}>火</h1>
+                        <h1 style={{ color: 'pink', margin: '0' }}>大</h1>
+                        <h1 style={{ color: 'aqua', margin: '0' }}>会</h1>
                         <FilterVintageIcon
-                            style={{margin: '0 1rem', color: '#FFF'}}
+                            style={{ margin: '0 1rem', color: '#FFF' }}
                         />
                     </div>
 
@@ -146,7 +146,7 @@ const Home = (props) => {
                                 }}
                                 value={text}
                                 placeholder="輸入暱稱"
-                                inputProps={{'aria-label': 'description'}}
+                                inputProps={{ 'aria-label': 'description' }}
                                 onChange={(evt) => {
                                     setText(evt.target.value)
                                 }}
