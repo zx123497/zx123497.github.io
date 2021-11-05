@@ -17,7 +17,7 @@ const Loader = (props) => {
           width="24px"
           height="30px"
           viewBox="0 0 24 30"
-          style={{ enableBackground: "new 0 0 50 50" }}
+            style={{ enableBackground: "new 0 0 50 50" }}
           space="preserve"
         >
           <rect x="0" y="13" width="4" height="5" fill="#333">

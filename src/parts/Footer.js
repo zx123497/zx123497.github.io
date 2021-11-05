@@ -22,7 +22,7 @@ const Footer = (props) => {
       }}
     >
       <div
-        style={{
+          style={{
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
