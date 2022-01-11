@@ -67,10 +67,10 @@ const Home = () => {
                 },
             }}
         >
-            <div className={classes.root}>
+            <div className="flex flex-col">
                 <div
                     style={{
-                        background: `linear-gradient(rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 1) 95%),no-repeat top center/100% url(${HomeImage})`,
+                        background: 'linear-gradient(rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 1) 95%)',
                         // backgroundColor: "#FFF",
                         display: 'flex',
                         flex: 1,
@@ -80,17 +80,7 @@ const Home = () => {
                         alignItems: 'center',
                     }}
                 >
-                    <div
-                        style={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            margin: 'auto',
-                            height: '100vh',
-                            color: '#FFF',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                        }}
-                    >
+                    <div className="flex flex-col m-auto min-h-screen text-white justify-center items-center">
                         <motion.div
                             initial={{ opacity: 0, x: -100 }}
                             animate={{
@@ -104,7 +94,9 @@ const Home = () => {
                             }}
                             style={{ width: '100%' }}
                         >
-                            <img src={Title} style={{ width: '100%', height: 'auto' }} alt="img" />
+                            <div>
+                                <img src={Title} style={{}} alt="img" />
+                            </div>
                         </motion.div>
                         <motion.h3
                             initial={{ opacity: 0, x: 100 }}
@@ -138,26 +130,11 @@ const Home = () => {
                     </div>
                 </div>
                 {/* second section start */}
-                <div
-                    id="2"
-                    style={{
-                        backgroundColor: '#eee',
-                        display: 'flex',
-                        position: 'relative',
-                        justifyContent: 'center',
-                        width: '100%',
-                        padding: '5rem',
-                    }}
-                    ref={ref}
-                >
+                <div id="2" ref={ref} className={classes.serviceContainer}>
                     <div style={{ position: 'relative' }}>
-                        <h2 style={{ marginBottom: '3rem', color: '#555' }}>我的專長 My Service</h2>
+                        <h2 style={{ marginBottom: '3rem', color: '#555' }}>我的專長 My Services</h2>
                         <motion.div
-                            style={{
-                                display: 'flex',
-                                justifyContent: 'space-around',
-                                width: '100%',
-                            }}
+                            className={classes.blockContainer}
                             variants={{
                                 hidden: { opacity: 0, y: 0 },
                                 show: {
@@ -169,16 +146,7 @@ const Home = () => {
                             animate="show"
                         >
                             <FadeInWhenVisible delay={0.25}>
-                                <div
-                                    style={{
-                                        height: '20rem',
-                                        marginRight: '2rem',
-                                        borderRadius: '10px',
-                                        boxShadow: '3px 3px 6px rgba(0,0,0,0.2)',
-                                        backgroundColor: 'rgba(255,217,24,.9)',
-                                        padding: '2rem',
-                                    }}
-                                >
+                                <div className={classes.block}>
                                     <div>
                                         <img
                                             src={UX}
@@ -193,29 +161,15 @@ const Home = () => {
                                         <h3>UI/UX 設計</h3>
                                     </div>
                                     <div>
-                                        <h5
-                                            style={{
-                                                color: '#555',
-                                                lineHeight: '1.5rem',
-                                            }}
-                                        >
+                                        <div className="flex">
                                             熟悉的UI/UX設計軟體為Adobe
                                             XD，喜歡上Pinterest等圖片庫尋找靈感、學習排版，平常也會畫畫，然後把自己的作品隱藏在網頁中當作彩蛋
-                                        </h5>
+                                        </div>
                                     </div>
                                 </div>
                             </FadeInWhenVisible>
                             <FadeInWhenVisible delay={0.5}>
-                                <div
-                                    style={{
-                                        height: '20rem',
-                                        marginRight: '2rem',
-                                        borderRadius: '10px',
-                                        boxShadow: '3px 3px 6px rgba(0,0,0,0.2)',
-                                        backgroundColor: 'rgba(100,100,100,.95)',
-                                        padding: '2rem',
-                                    }}
-                                >
+                                <div className={classes.block}>
                                     <div>
                                         <img
                                             src={Engineer}
@@ -227,32 +181,22 @@ const Home = () => {
                                         />
                                     </div>
                                     <div>
-                                        <h3 style={{ color: '#FFF' }}>前端開發</h3>
+                                        <h3>前端開發</h3>
                                     </div>
                                     <div>
-                                        <h5
+                                        <div
                                             style={{
-                                                color: '#ccc',
                                                 lineHeight: '1.5rem',
                                             }}
                                         >
                                             熟悉的前端框架為React、React native，最喜歡的套件是Framer
                                             Motion，他是個很厲害的動畫套件，在大學就接觸滿多前端的任務
-                                        </h5>
+                                        </div>
                                     </div>
                                 </div>
                             </FadeInWhenVisible>
                             <FadeInWhenVisible delay={0.75}>
-                                <div
-                                    style={{
-                                        height: '20rem',
-                                        marginRight: '2rem',
-                                        borderRadius: '10px',
-                                        boxShadow: '3px 3px 6px rgba(0,0,0,0.2)',
-                                        backgroundColor: 'rgba(255,255,255,.95)',
-                                        padding: '2rem',
-                                    }}
-                                >
+                                <div className={classes.block}>
                                     <div>
                                         <img
                                             src={Paint}
@@ -267,15 +211,14 @@ const Home = () => {
                                         <h3>美術設計</h3>
                                     </div>
                                     <div>
-                                        <h5
+                                        <div
                                             style={{
-                                                color: '#999',
                                                 lineHeight: '1.5rem',
                                             }}
                                         >
                                             會使用 Adobe Photoshop、Adobe
                                             Aftereffect、Procreate，來設計圖、手繪繪圖、動態GIF，平常也喜歡隨手塗鴉
-                                        </h5>
+                                        </div>
                                     </div>
                                 </div>
                             </FadeInWhenVisible>
@@ -368,7 +311,7 @@ const Home = () => {
     )
 }
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     root: {
         width: '100%',
         display: 'flex',
@@ -524,6 +467,25 @@ const useStyles = makeStyles({
             boxShadow: '0 0 50px rgba(117, 13, 252,0)',
         },
     },
-})
+    serviceContainer: {
+        backgroundColor: '#eee',
+        display: 'flex',
+        position: 'relative',
+        justifyContent: 'center',
+        width: '100%',
+        padding: '5rem',
+    },
+    blockContainer: {
+        display: 'flex',
+        flexDirection: 'row',
+        [theme.breakpoints.down('md')]: {
+            flexDirection: 'column',
+        },
+    },
+    block: {
+        marginRight: '2rem',
+        padding: '2rem',
+    },
+}))
 
 export default Home

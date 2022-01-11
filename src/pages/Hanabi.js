@@ -92,7 +92,8 @@ const Home = (props) => {
     const messagesEndRef = useRef(null)
     const scrollToBottom = () => {
         if (messagesEndRef.current) {
-            scrollIntoView({
+            const elmnt = document.getElementById('scroll')
+            elmnt.scrollIntoView({
                 behavior: 'smooth',
                 block: 'nearest',
                 inline: 'start',
@@ -281,15 +282,13 @@ const Home = (props) => {
                             />
                         )}
                     >
-                        <div style={{ height: '15rem', width: '30rem' }}>
+                        <div id="scroll" style={{ height: '15rem', width: '30rem' }}>
                             {messages.map((row) => (
                                 <div
                                     style={
-                                        row.text ===
-                                        `${row.username} 也加入花火大會了，打聲招呼吧~` ?
+                                        row.text === `${row.username} 也加入花火大會了，打聲招呼吧~` ?
                                             { color: 'orange' } :
-                                            row.text ===
-                                              `${row.username} 離開花火大會 ~` ?
+                                            row.text === `${row.username} 離開花火大會 ~` ?
                                                 { color: 'rgba(255,255,255,0.3)' } :
                                                 {}
                                     }

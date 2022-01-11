@@ -9,7 +9,7 @@ const theme = createMuiTheme({
             glare: '#BBBBBB',
         },
         primary: {
-            main: orange[700],
+            main: 'rgb(117, 13, 252)',
             light: orange[50],
             dark: orange[900],
         },
