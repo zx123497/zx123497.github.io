@@ -4,7 +4,7 @@ const pttService = {
     getArticles: async () => {
         try {
             const response = await axios.get('/ptt')
-            return response
+            return response.data
         } catch (error) {
             throw error
         }
@@ -12,7 +12,7 @@ const pttService = {
     postArticle: async (data) => {
         try {
             const response = await axios.post('/ptt', data)
-            return response
+            return response.data
         } catch (error) {
             throw error
         }
@@ -20,7 +20,7 @@ const pttService = {
     getArticle: async (id) => {
         try {
             const response = await axios.get(`/ptt/${id}`)
-            return response
+            return response.data
         } catch (error) {
             throw error
         }
@@ -28,7 +28,7 @@ const pttService = {
     deleteArticle: async (id) => {
         try {
             const response = await axios.delete(`/ptt/${id}`)
-            return response
+            return response.data
         } catch (error) {
             throw error
         }
@@ -36,7 +36,7 @@ const pttService = {
     putArticle: async (id, data) => {
         try {
             const response = await axios.delete(`/ptt/${id}`, data)
-            return response
+            return response.data
         } catch (error) {
             throw error
         }
