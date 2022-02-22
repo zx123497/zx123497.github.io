@@ -2,25 +2,42 @@ import React, { useEffect, useState } from 'react'
 import { makeStyles } from '@material-ui/core'
 import { TextField } from '@material-ui/core'
 import { Button } from '@material-ui/core'
-import Marigold from '../assets/marigold.png'
 import Web3 from 'web3'
+import Marigold from '../assets/marigold.png'
+import MarigoldBig from '../assets/marigold_big.png'
 
 const useStyles = makeStyles((theme) => ({
     transaction_area: {
-        width: '100%',
+        color: '#ccc',
+
         height: '23rem',
-        backgroundColor: '#ccc',
+        backgroundColor: '#333',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        paddingTop: '90px',
+        paddingTop: '100px',
+        position: 'relative',
+        overflow: 'hidden',
     },
     textarea: {
         width: '50rem',
+        color: '#ccc',
+        '& .MuiFormLabel-root': {
+            color: '#ccc',
+        },
+        '& .MuiInput-input': {
+            color: '#ccc',
+        },
     },
     moneyarea: {
         width: '7rem',
         marginLeft: '1rem',
+        '& .MuiFormLabel-root': {
+            color: '#ccc',
+        },
+        '& .MuiInput-input': {
+            color: '#ccc',
+        },
     },
     submit: {
         backgroundColor: 'rgb(117, 13, 252)',
@@ -34,21 +51,24 @@ const useStyles = makeStyles((theme) => ({
     record_area: {
         width: '100%',
         minHeight: '25rem',
-        backgroundColor: '#eee',
+        backgroundColor: '#222',
         display: 'flex',
-        flexDirection: 'column',
+        flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
         padding: '3rem 0',
+        flexWrap: 'wrap',
+        position: 'relative',
     },
     card: {
-        width: 'max-content',
+        width: '60rem',
         borderRadius: '10px',
         height: '5rem',
         display: 'flex',
         justifyContent: 'flex-start',
         alignItems: 'center',
         margin: '0 0 1rem 0',
+        color: '#ccc',
     },
     title: {
         marginRight: '2rem',
@@ -82,6 +102,39 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
+        fontSize: '1.5rem',
+    },
+    flower1: {
+        position: 'absolute',
+        left: -100,
+        overflow: 'hidden',
+        animation: '$spin infinite 20s linear',
+    },
+    flower2: {
+        position: 'absolute',
+        right: -100,
+        overflow: 'hidden',
+        animation: '$spin infinite 20s linear',
+        animationDirection: 'reverse',
+    },
+    colorSquare: {
+        animation: '$spinrev infinite 20s linear',
+    },
+    '@keyframes spin': {
+        '0%': {
+            transform: 'rotate(0deg)',
+        },
+        '100%': {
+            transform: 'rotate(360deg)',
+        },
+    },
+    '@keyframes spinrev': {
+        '0%': {
+            transform: 'rotate(0deg)',
+        },
+        '100%': {
+            transform: 'rotate(-360deg)',
+        },
     },
 }))
 
@@ -127,6 +180,9 @@ const BlockChain = () => {
     return (
         <div>
             <div className={classes.transaction_area}>
+                <img src={MarigoldBig} alt="marigold" className={classes.flower1} />
+                <img src={MarigoldBig} alt="marigold" className={classes.flower2} />
+
                 <div className={classes.bigTitle}>領取你的MariGold</div>
                 <div className={classes.flexCenter}>
                     <div>

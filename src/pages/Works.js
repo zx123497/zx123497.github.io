@@ -2,6 +2,11 @@ import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/core'
 import { motion } from 'framer-motion'
 import { CirclePicker } from 'react-color'
+import Donut from '../assets/donut.jpg'
+import Serve from '../assets/serve.png'
+import Sticker from '../assets/sticker.jpg'
+import Two from '../assets/222.png'
+import Modal from '../components/Modal/Modal'
 const useStyles = makeStyles({
     titlediv: {
         display: 'flex',
@@ -24,17 +29,18 @@ const useStyles = makeStyles({
         },
     },
     blockArea: {
-        width: '80%',
-        height: '45rem',
-        backgroundColor: 'rgba(255,255,255,0.3)',
+        width: '105rem',
+        height: '42rem',
         display: 'flex',
         flexWrap: 'wrap',
         justifyContent: 'center',
         alignItems: 'flex-start',
+        overflow: 'auto',
+        padding: '2rem',
     },
     card: {
-        width: '15rem',
-        height: '15rem',
+        width: '20rem',
+        height: '20rem',
         backgroundColor: 'rgba(0,0,0,0.5)',
         '&:hover': {
             transform: 'scale(1.1)',
@@ -44,11 +50,16 @@ const useStyles = makeStyles({
 })
 const Works = (props) => {
     const classes = useStyles()
+    const [open1, setOpen1] = useState(false)
     const [color, setColor] = useState('#FFF')
     const [shadow, setShadow] = useState('rgba(255,255,255,0.7)')
     const handleChangeColor = (color, event) => {
         setColor(color.hex)
         setShadow(`rgba(${color.rgb.r},${color.rgb.g},${color.rgb.b},0.7)`)
+    }
+    const handleOpen1 = () => {
+        setOpen1(!open1)
+        console.log('HI')
     }
     return (
         <motion.div
@@ -70,18 +81,21 @@ const Works = (props) => {
             }}
         >
             <div className={classes.titlediv}>
-                <h1>專案作品</h1>
+                <h1>專案作品Projects & Artworks</h1>
                 <div className={classes.blockArea}>
-                    <Card></Card>
-                    <Card></Card>
-                    <Card></Card>
-                    <Card></Card>
-                    <Card></Card>
-                    <Card></Card>
-                    <Card></Card>
-                    <Card></Card>
-                    <Card></Card>
-                    <Card></Card>
+                    <Card>
+                        <img onClick={handleOpen1} src={Serve} style={{ height: '100%', width: 'auto' }} />
+                        <Modal opened={open1}>HI</Modal>
+                    </Card>
+                    <Card>
+                        <img src={Sticker} style={{ height: '100%', width: 'auto' }} />
+                    </Card>
+                    <Card>
+                        <img src={Donut} style={{ height: '100%', width: 'auto' }} />
+                    </Card>
+                    <Card>
+                        <img src={Two} style={{ height: '100%', width: 'auto' }} />
+                    </Card>
                 </div>
                 <div
                     className={classes.colorSquare}
@@ -137,7 +151,7 @@ const Works = (props) => {
 
 const Card = (props) => {
     const classes = useStyles()
-    return <div className={classes.card}>Card</div>
+    return <div className={classes.card}>{props.children}</div>
 }
 
 export default Works
